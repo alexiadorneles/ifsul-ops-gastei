@@ -1,0 +1,11 @@
+/* Cabecalho */
+
+.cabecalho {
+  text-align: center;
+}
+
+.cabecalho > .logo {
+  margin-top: 20px;
+}
+
+/* Cadastro */

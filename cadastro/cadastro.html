@@ -1,0 +1,25 @@
+<div class="cadastro">
+  <h1>Cadastro</h1>
+
+  <form class="form">
+
+    <label class="labels" for="nome"> Nome: </label>
+    <input class="inputs" type="text" name="nome">
+
+    <label class="labels" for="email"> E-mail: </label>
+    <input class="inputs" placeholder="email@exemplo.com" type="email" name="email">
+
+    <label class="labels" for="senha"> Senha: </label>
+    <img class="show-password" src="img/show-password.png" ng-click="alternarShowPassword()">
+    <input class="inputs" placeholder="********" ng-show="showPassword" type="text" ng-model="password" name="senha">
+    <input class="inputs" placeholder="********" ng-hide="showPassword" type="password" ng-model="password" name="senha">
+
+    <label class="labels" for="repetirSenha"> Repetir Senha: </label>
+    <img class="show-password" src="img/show-password.png" ng-click="alternarShowPassword()">
+    <input class="inputs" placeholder="********" ng-show="showPassword" type="text" ng-model="repeatPassword" name="repetirSenha">
+    <input class="inputs" placeholder="********" ng-hide="showPassword" type="password" ng-model="repeatPassword" name="repetirSenha">
+
+    <button class="botao" type="submit"> Cadastrar-se </button>
+
+  </form>
+</div>

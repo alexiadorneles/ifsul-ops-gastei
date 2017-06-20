@@ -1,7 +1,8 @@
 angular.module('app').controller('CadastroController', function ($location, $scope) {
-  // NOT IMPLEMENTED
   $scope.alternarShowPassword = alternarShowPassword;
+  $scope.alternarShowRepeatPassword = alternarShowRepeatPassword;
   $scope.showPassword = false;
+  $scope.showRepeatPassword = false;
 
   function alternarShowPassword() {
     if (!$scope.showPassword) {
@@ -9,6 +10,10 @@ angular.module('app').controller('CadastroController', function ($location, $sco
     } else {
       $scope.showPassword = false;
     }
+  }
+
+  function alternarShowRepeatPassword() {
+    $scope.showRepeatPassword = $scope.showRepeatPassword ? false : true;
   }
 
 });

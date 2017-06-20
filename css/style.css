@@ -1,5 +1,14 @@
-/* Cabecalho */
+/* Estilos Gerais */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Cabecalho */
 .cabecalho {
   text-align: center;
 }
@@ -9,3 +18,56 @@
 }
 
 /* Cadastro */
+.cadastro {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 50px;
+}
+
+.cadastro > h1 {
+  margin-bottom: 10px;
+}
+
+.form {
+  padding: 30px;
+  position: relative;
+}
+
+.cadastro > .form > .labels {
+  display: block;
+}
+
+.cadastro > .form > .inputs {
+  border: none;
+  border-bottom: 3px solid #85d0be;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  font: 24px Arial;
+}
+
+.cadastro > .form > .inputs:focus {
+  outline: none;
+}
+
+.cadastro > .form > .show-password {
+  max-width: 30px;
+  max-height: 30px;
+  position: absolute;
+  left: 88%;
+  margin-top: 22px;
+}
+
+.cadastro > .form > .botao {
+  width: 60%;
+  background-color: white;
+  border: 3px solid #85d0be;
+  text-transform: uppercase;
+  color: #85d0be;
+  padding: 8px;
+  font: 24px Arial;
+  font-weight: 700;
+  margin: 50px auto;
+  display: block;
+}

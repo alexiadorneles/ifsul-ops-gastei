@@ -1,9 +1,10 @@
-angular.module('app').controller('CadastroController', function ($location, $scope) {
+export default function CadastroController ($location, $scope){
+  
   $scope.alternarShowPassword = alternarShowPassword;
   $scope.alternarShowRepeatPassword = alternarShowRepeatPassword;
   $scope.showPassword = false;
   $scope.showRepeatPassword = false;
-
+  
   function alternarShowPassword() {
     if (!$scope.showPassword) {
       $scope.showPassword = true;
@@ -15,5 +16,4 @@ angular.module('app').controller('CadastroController', function ($location, $sco
   function alternarShowRepeatPassword() {
     $scope.showRepeatPassword = $scope.showRepeatPassword ? false : true;
   }
-
-});
+}

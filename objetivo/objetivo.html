@@ -1,0 +1,43 @@
+<div class="objetivo">
+  <div class="completos" ng-click="exibirObjetivosCompletos()">
+    <h3>Objetivos Completos</h3>
+    <div class="objetivos-completos" ng-show="showObjetivosCompletos">
+      <div class="objetivos-completos-container">
+        <span>Item 1</span>
+        <span>R$ 10,00</span>
+        <img class="deletar" src="img/delete.svg" title="deletar">
+      </div>
+      <div class="objetivos-completos-container">
+        <span>Item 2</span>
+        <span>R$ 20,00</span>
+        <img class="deletar" src="img/delete.svg" title="deletar">
+      </div>
+    </div>
+  </div>
+
+  <div class="incompletos" ng-click="exibirObjetivosIncompletos()">
+    <h3>Objetivos Incompletos</h3>
+    <div class="objetivos-incompletos" ng-show="showObjetivosIncompletos">
+      <div class="objetivos-incompletos-container">
+        <span>Item 1</span>
+        <span>R$ 10,00</span>
+        <input type="checkbox" name="opcoes" ng-click="exibirOpcoes()">
+      </div>
+      <div class="objetivos-incompletos-opcoes" ng-show="showOpcoes">
+        <div class="opcoes">
+          <img class="deletar" src="img/delete.svg" title="deletar">
+          <img class="arquivar" src="img/arquivo.svg" title="arquivar">
+          <img class="completar" src="img/check.svg" title="completar">
+        </div>
+      </div>
+      <div class="objetivos-incompletos-container">
+        <span>Item 2</span>
+        <span>R$ 20,00</span>
+        <img class="deletar" src="img/delete.svg" title="deletar">
+      </div>
+      <div class="arquivados">
+      </div>
+    </div>
+  </div>
+
+</div>

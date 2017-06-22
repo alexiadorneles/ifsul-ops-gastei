@@ -82,3 +82,60 @@ body {
   font-size: 20px;
   width: 50%;
 }
+
+/* Objetivo */
+.objetivo{
+  margin: 0 auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.completos, .incompletos{
+  width: 60%;
+  margin-bottom: 50px;
+  background: #F2F2F2;
+  border: 1px solid #DDDADA;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.objetivos-completos, .objetivos-incompletos{
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDADA;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+}
+
+.objetivos-completos-container, .objetivos-incompletos-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.objetivos-incompletos-opcoes{
+  width: 35%;
+  background-color: #F2F2F2;
+}
+
+.opcoes {
+  display: flex;
+  justify-content: space-around;
+  height: 25px;
+}
+
+.opcoes > img {
+  width: 20%;
+}
+
+.opcoes > .arquivar{
+  width: 20%;
+}
+
+.deletar{
+  width: 5%;
+}

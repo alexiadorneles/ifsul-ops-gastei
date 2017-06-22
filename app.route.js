@@ -1,12 +1,7 @@
-angular.module('app').config(function ($routeProvider) {
-  $routeProvider
-  .when('/login', {
-    controller: 'LoginController',
-    templateUrl: '/login/login.html'
-  })
-  .when('/cadastro', {
-    controller: 'CadastroController',
-    templateUrl: '/cadastro/cadastro.html'
-  })
-  .otherwise({redirectTo: '/login'});
-});
+routing.$inject = ['$routeProvider', '$locationProvider'];
+
+export default function routing ($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true).hashPrefix('')
+  $routeProvider.otherwise({redirectTo: '/login'});
+};
+

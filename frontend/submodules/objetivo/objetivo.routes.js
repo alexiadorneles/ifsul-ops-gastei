@@ -2,6 +2,6 @@ export default function routes($routeProvider) {
   $routeProvider
     .when('/objetivo', {
         controller: 'ObjetivoController',
-        templateUrl: '/objetivo/objetivo.html'
+        templateUrl: '/submodules/objetivo/objetivo.html'
     })
 }

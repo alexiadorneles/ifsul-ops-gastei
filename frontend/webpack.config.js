@@ -48,7 +48,7 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: 'css/app-bundle.css',
+            filename: 'assets/css/app-bundle.css',
             allChunks: true,
             disable: isDev
         }),

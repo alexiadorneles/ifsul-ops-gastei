@@ -1,12 +1,12 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
-import './css/style.css';
+import './assets/css/style.css';
 
 import routing from './app.route';
 
-import objetivo from './objetivo';
-import cadastro from './cadastro';
-import login from './login'
+import objetivo from './submodules/objetivo';
+import cadastro from './submodules/cadastro';
+import login from './submodules/login'
 
 
 angular.module('app', [ngRoute, objetivo, cadastro, login])

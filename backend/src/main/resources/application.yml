@@ -1,0 +1,12 @@
+spring:
+    data:
+      rest:
+        base-path: /api
+    datasource:
+      url: jdbc:mysql://192.168.56.101:3306/opsgastei?useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+      hibernate:
+        ddl-auto: create

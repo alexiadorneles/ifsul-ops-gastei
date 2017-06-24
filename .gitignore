@@ -3,3 +3,4 @@ bundles/
 .idea/
 backend/target/
 *.iml
+mvnw*

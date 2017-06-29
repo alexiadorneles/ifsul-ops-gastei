@@ -83,6 +83,10 @@ body {
   width: 50%;
 }
 
+.cadastro > .form > .botao:focus {
+  outline: none;
+}
+
 /* Objetivo */
 .objetivo{
   margin: 0 auto;

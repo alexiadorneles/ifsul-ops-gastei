@@ -1,5 +1,6 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
+import 'sweetalert/dist/sweetalert.css'
 import './assets/css/style.css';
 
 import routing from './app.route';

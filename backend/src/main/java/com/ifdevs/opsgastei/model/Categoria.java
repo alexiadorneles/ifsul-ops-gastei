@@ -1,5 +1,6 @@
 package com.ifdevs.opsgastei.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by mhenrique on 6/30/17.
  */
+@Entity
 public class Categoria {
 
     @Id

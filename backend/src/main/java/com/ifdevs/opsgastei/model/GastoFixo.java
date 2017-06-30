@@ -3,6 +3,7 @@ package com.ifdevs.opsgastei.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -22,6 +23,10 @@ public class GastoFixo {
     private Date data;
 
     private int periodo;
+
+    @OneToMany(mappedBy = "primaryKey.gastoFixo",
+            cascade = CascadeType.ALL)
+    private Set<GastoFixoMes> gastoFixoMes;
 
     public Long getId() {
         return id;
@@ -53,5 +58,13 @@ public class GastoFixo {
 
     public void setPeriodo(int periodo) {
         this.periodo = periodo;
+    }
+
+    public Set<GastoFixoMes> getGastoFixoMes() {
+        return gastoFixoMes;
+    }
+
+    public void setGastoFixoMes(Set<GastoFixoMes> gastoFixoMes) {
+        this.gastoFixoMes = gastoFixoMes;
     }
 }

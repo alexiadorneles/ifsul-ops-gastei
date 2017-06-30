@@ -3,6 +3,7 @@ package com.ifdevs.opsgastei.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -21,8 +22,19 @@ public class Mes {
     @NotNull
     private Double salario;
 
-    @JoinColumn(name = "usuario_id")
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
+
+    @ManyToMany
+    @JoinTable(name="objetivo_mes",
+            joinColumns={@JoinColumn(name="id_mes")},
+            inverseJoinColumns={@JoinColumn(name="id_objetivo")})
+    private Set<Objetivo> objetivos;
+
+    @OneToMany(mappedBy = "primaryKey.mes",
+            cascade = CascadeType.ALL)
+    private Set<GastoFixoMes> gastoFixoMes;
 
     public Long getId() {
         return id;
@@ -54,5 +66,21 @@ public class Mes {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public Set<Objetivo> getObjetivos() {
+        return objetivos;
+    }
+
+    public void setObjetivos(Set<Objetivo> objetivos) {
+        this.objetivos = objetivos;
+    }
+
+    public Set<GastoFixoMes> getGastoFixoMes() {
+        return gastoFixoMes;
+    }
+
+    public void setGastoFixoMes(Set<GastoFixoMes> gastoFixoMes) {
+        this.gastoFixoMes = gastoFixoMes;
     }
 }

@@ -1,6 +1,7 @@
 import angular from 'angular'
 import ngRoute from 'angular-route'
 
+import './objetivo.css'
 import routing from './objetivo.routes'
 import ObjetivoController from './objetivo.controller'
 

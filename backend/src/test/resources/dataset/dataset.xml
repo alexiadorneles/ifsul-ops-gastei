@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+
+    <!-- USUARIO -->
+    <usuario id="1" email="teste1@teste" senha="plain" salario="1000" />
+    <usuario id="2" email="teste2@teste" senha="plain" salario="2000" />
+    <usuario id="3" email="teste3@teste" senha="plain" salario="1500" />
+
+</dataset>

@@ -3,7 +3,7 @@ spring:
       rest:
         base-path: /api
     datasource:
-      url: jdbc:h2:mem:testdb
+      url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
       driver-class-name: org.h2.Driver
 
 ---
@@ -20,4 +20,4 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
     jpa:
       hibernate:
-        ddl-auto: create
+        ddl-auto: update

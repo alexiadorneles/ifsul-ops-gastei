@@ -6,9 +6,10 @@ import './assets/css/style.css';
 import routing from './app.route';
 
 import objetivo from './submodules/objetivo';
+import add_objetivo from './submodules/add_objetivo';
 import cadastro from './submodules/cadastro';
 import login from './submodules/login'
 
 
-angular.module('app', [ngRoute, objetivo, cadastro, login])
+angular.module('app', [ngRoute, objetivo, add_objetivo, cadastro, login])
     .config(routing)

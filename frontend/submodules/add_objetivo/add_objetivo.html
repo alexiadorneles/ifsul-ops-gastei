@@ -1,0 +1,29 @@
+<div class="adicionar-objetivo">
+  <div class="adicionar-objetivo-container">
+    <h2>Novo Objetivo</h2>
+    <h3>Nome:</h3>
+    <input class="inputs" type="text" name="nome-objetivo">
+    <h3>Valor:</h3>
+    <input class="inputs" type="number" min="0" step="0.01" name="valor-objetivo">
+    <div class="categoria">
+      <h3>Categoria:</h3>
+      <h6 id="triangulo" ng-click="exibirCategorias()"></h6>
+    </div>
+    <div class="categoria-container" ng-show="exbirOpcoesCategoria">
+      <div class="categoria-opcoes">
+        <span>Categoria 1</span>
+        <div class="adicionar-categoria" ng-show="addCategoria">
+          <label> Nome:
+            <input class="inputs" type="text" name="nome-categoria">
+          </label>
+        </div>
+        <div class="botao-container">
+          <button class="botao" ng-click="adicionarCategoria()">Adicionar categoria</button>
+        </div>
+      </div>
+    </div>
+    <div class="botao-container">
+      <button class="botao">Adicionar Objetivo</button>
+    </div>
+  </div>
+</div>

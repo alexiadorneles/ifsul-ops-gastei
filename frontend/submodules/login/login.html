@@ -1,1 +1,17 @@
-<h1>LOGIN</h1>
+<section>
+  <h1>Login</h1>
+  <button
+    class="btn btn-primary btn-margin"
+    ng-if="!vm.auth.isAuthenticated()"
+    ng-click="vm.auth.login()">
+      Log In
+  </button>
+
+  <button
+    class="btn btn-primary btn-margin"
+    ng-if="vm.auth.isAuthenticated()"
+    ng-click="vm.auth.logout()">
+      Log Out
+  </button>
+
+</section>

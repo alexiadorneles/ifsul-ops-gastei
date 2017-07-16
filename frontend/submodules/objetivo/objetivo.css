@@ -84,13 +84,13 @@
   cursor: pointer;
 }
 
-.adicionar-objetivo {
+.objetivos-incompletos > .adicionar-objetivo {
   margin-top: 15px;
   text-align: center;
   text-transform: uppercase;
 }
 
-.adicionar-objetivo > h4 {
+.objetivos-incompletos > .adicionar-objetivo > h4 {
   font-weight: bold;
 }
 

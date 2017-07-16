@@ -1,0 +1,61 @@
+
+    <div class="salario">
+      <h1>- R$ 20,00</h1>
+    </div>
+
+
+    <div class="conteudo">
+
+      <div class="gasto">
+          <div class="gastos-title" ng-click="exibirGastos()">
+            <h2>Gastos Fixos</h2>
+          </div>
+          <div class="gastos" ng-show="showGastos">
+            <div class="gastos-container">
+              <span>Item 1</span>
+              <span>R$ 10,00</span>
+              <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+            </div>
+            <div class="gastos-container">
+              <span>Item 2</span>
+              <span>R$ 20,00</span>
+              <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+            </div>
+            <div class="gastos-total">
+              <span>Total:</span>
+              <span id="total">R$ 30,00</span>
+            </div>
+          </div>
+
+
+      </div>
+
+
+
+            <div class="objetivo">
+                <div class="objetivos-title" ng-click="exibirObjetivos()">
+                  <h2>Objetivos</h2>
+                </div>
+                <div class="objetivos" ng-show="showObjetivos">
+                  <div class="objetivos-container">
+                    <span>Item 1</span>
+                    <span>R$ 10,00</span>
+                    <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
+                  </div>
+                  <div class="objetivos-container">
+                    <span>Item 2</span>
+                    <span>R$ 20,00</span>
+                    <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
+                  </div>
+                  <div class="objetivos-total">
+                    <span>Total:</span>
+                    <span id="total">R$ 30,00</span>
+                  </div>
+                </div>
+
+
+            </div>
+
+
+
+    </div>

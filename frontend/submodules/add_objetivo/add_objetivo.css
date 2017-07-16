@@ -1,0 +1,71 @@
+/* Adicionar Objetivo */
+.adicionar-objetivo {
+  margin: 0 auto 5% auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputs{
+  border: none;
+  border-bottom: 3px solid #66c4ad;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  font: 24px Arial;
+}
+
+.adicionar-objetivo-container > h2{
+  font-weight: bold;
+}
+
+.categoria{
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoria-container{
+  display: flex;
+  justify-content: center;
+}
+
+.categoria-opcoes{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.categoria-opcoes > .botao-container > .botao {
+  font-size: 15px;
+  width: 100%;
+}
+
+#triangulo{
+  margin-top: 10%;
+  width: 15px;
+  height: 15px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid;
+  cursor: pointer;
+}
+
+.categoria-opcoes > .adicionar-categoria > label {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.categoria-opcoes > .adicionar-categoria > label > .inputs {
+  margin-top: 5px;
+  height: 20px;
+  font-size:
+}
+
+.adicionar-objetivo-container > .botao-container > .botao {
+  width: 100%;
+  margin-top: 10%;
+}

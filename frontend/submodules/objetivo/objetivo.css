@@ -50,24 +50,6 @@
   padding-left: 5px;
 }
 
-.objetivos-incompletos-opcoes {
-  width: 35%;
-}
-
-.opcoes {
-  display: flex;
-  justify-content: space-around;
-  height: 25px;
-}
-
-.opcoes > img {
-  width: 20%;
-}
-
-.opcoes > .arquivar {
-  width: 20%;
-}
-
 .dropdown-menu > li {
     cursor: pointer;
     margin: 10px 10px 10px 10px;
@@ -129,4 +111,5 @@
 
 .arquivados > .botao-container > .botao > .arquivar {
   width: 8%;
+  margin-bottom: 5px;
 }

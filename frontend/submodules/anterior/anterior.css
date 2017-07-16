@@ -28,7 +28,7 @@ h1{
 
 
 /* Objetivo */
-.objetivo, .gasto {
+.conteudo > .objetivo, .conteudo > .gasto {
 
   width: 80%;
   height: auto;

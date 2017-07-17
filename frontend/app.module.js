@@ -14,5 +14,5 @@ import cadastro from './submodules/cadastro';
 import login from './submodules/login'
 
 
-angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, cadastro, login])
+angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arquivado, cadastro, login])
     .config(routing)

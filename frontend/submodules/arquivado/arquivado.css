@@ -1,10 +1,9 @@
 /*Arquivados*/
 .arquivados {
-  margin: 0 auto 5% auto;
+  margin: 5% 0 5% 0;
   padding-top: 10px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .arquivados-container {
@@ -33,7 +32,7 @@
     margin: 10px 10px 10px 10px;
 }
 
-.dropdown-menu > img > .arquivar,
+.dropdown > .arquivar,
 .dropdown-menu > li > .desarquivar {
   width: 15%;
 }

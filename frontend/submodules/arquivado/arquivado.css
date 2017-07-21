@@ -1,0 +1,38 @@
+/*Arquivados*/
+.arquivados {
+  margin: 5% 0 5% 0;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.arquivados-container {
+  width: 60%;
+  margin-bottom: 50px;
+  background: #66C4AD;
+  border: 2px solid #DDDADA;
+}
+
+.arquivados-container > .title {
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: bold;
+}
+
+.objetivos-arquivados-container {
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dropdown-menu > li {
+    cursor: pointer;
+    margin: 10px 10px 10px 10px;
+}
+
+.dropdown > .arquivar,
+.dropdown-menu > li > .desarquivar {
+  width: 15%;
+}

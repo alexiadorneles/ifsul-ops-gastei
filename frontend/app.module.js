@@ -13,7 +13,9 @@ import arquivado from './submodules/arquivado';
 import simulacao from './submodules/simulacao';
 import cadastro from './submodules/cadastro';
 import login from './submodules/login'
+import gasto_fixo from './submodules/gasto_fixo'
 
 
-angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao, cadastro, login])
+angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
+  cadastro, login, gasto_fixo])
     .config(routing)

@@ -20,6 +20,12 @@
   font-weight: bold;
 }
 
+.simulacao-container > .objetivos > .selecionar-todos {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 12% 0 12%;
+}
+
 .objetivos-simulacao-container {
   padding-bottom: 5px;
   display: flex;

@@ -1,0 +1,53 @@
+<!-- ng-include com o menu  -->
+<div class="conteudo">
+  <div class="title">
+    <!-- TODO: adicionar função na controller para pegar o nome do mês -->
+    <!-- GASTOS FIXOS DE {{mes.nome}} -->
+    GASTOS FIXOS DE JULHO
+  </div>
+  <!-- <div class="gasto" ng-repeat="gastoFixo in gastosFixos">-->
+  <div class="gastos-fixos">
+    <div class="gastos-container" >
+      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+      <div class="gasto-title">
+        <h4>Gasto 1</h4>
+        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+      </div>
+      <div class="info">
+        <div class="">
+          <span class="type">Valor:</span> <span> R$ 120,00</span>
+        </div>
+        <div class="">
+          <span class="type">Periodo:</span> <span> 3 meses</span>
+        </div>
+        <div class="">
+          <span class="type">Categoria:</span> <span> Categoria 1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gastos-container" >
+      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+      <div class="gasto-title">
+        <h4>Gasto 2</h4>
+        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+      </div>
+      <div class="info">
+        <div class="">
+          <span class="type">Valor:</span> <span> R$ 50,00</span>
+        </div>
+        <div class="">
+          <span class="type">Periodo:</span> <span> 12 meses</span>
+        </div>
+        <div class="">
+          <span class="type">Categoria:</span> <span> Categoria 1</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="botao-container">
+      <button class="botao">Adicionar</button>
+    </div>
+
+  </div>
+</div>

@@ -60,7 +60,7 @@ body {
   margin-top: 22px;
 }
 
-.cadastro > .form > .botao-container > .botao {
+.botao-container > .botao {
   width: 60%;
   background-color: white;
   border: 3px solid #66c4ad;
@@ -76,16 +76,16 @@ body {
   transition-duration: 1s;
 }
 
-.cadastro > .form > .botao-container {
+.botao-container {
   padding: 50px 0;
 }
 
-.cadastro > .form > .botao-container > .botao:active {
+.botao-container > .botao:active {
   box-shadow: none;
   font-size: 20px;
   width: 50%;
 }
 
-.cadastro > .form > .botao-container > .botao:focus {
+.botao-container > .botao:focus {
   outline: none;
 }

@@ -1,5 +1,13 @@
 .menu-display {
-    visibility: visible;
+    transition-property: transform;
+    transition-duration: .6s;
+    transform: translateX(100%);
+}
+
+.menu-hide {
+    transition-property: transform;
+    transition-duration: .6s;
+    transform: translateX(0);
 }
 
 .menu-overlay {
@@ -10,11 +18,10 @@
 }
 
 #sidemenu {
-    left: 0;
-
     position: absolute;
     height: 100%;
     width: 80%;
+    left: -80%;
     background-color: white;
     z-index: 1000;
 

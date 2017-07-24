@@ -1,0 +1,40 @@
+.menu-display {
+    visibility: visible;
+}
+
+.menu-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0, 0, .4);
+}
+
+#sidemenu {
+    left: 0;
+
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background-color: white;
+    z-index: 1000;
+
+    .sidemenu__list a {
+        color: black;
+    }
+}
+
+.sidemenu__list {
+    /* fixing */
+    -webkit-padding-start: 0;
+
+    list-style: none;
+    font-size: 1.8em;
+
+    li {
+        height: 2em;
+    }
+    a {
+        display: block;
+        padding: .5em;
+    }
+}

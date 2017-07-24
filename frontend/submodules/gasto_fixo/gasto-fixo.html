@@ -5,13 +5,17 @@
     <!-- GASTOS FIXOS DE {{mes.nome}} -->
     GASTOS FIXOS DE JULHO
   </div>
-  <!-- <div class="gasto" ng-repeat="gastoFixo in gastosFixos">-->
+  <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
   <div class="gastos-fixos">
     <div class="gastos-container" >
       <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
       <div class="gasto-title">
         <h4>Gasto 1</h4>
-        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="mostrarOpcoes(gastoFixo)">
+      </div>
+      <div class="opcoes" ng-show="gastoFixo.opcoes=='true'">
+        <div>Editar</div>
+        <div>Excluir</div>
       </div>
       <div class="info">
         <div class="">

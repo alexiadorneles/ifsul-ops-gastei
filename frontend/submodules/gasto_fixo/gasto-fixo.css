@@ -52,3 +52,13 @@
   padding: 8px;
   margin: 20px auto;
 }
+
+.opcoes {
+  font-weight: 600;
+  color: #88cfbd;
+  text-transform: capitalize;
+  font-size: 18px;
+  float: right;
+  padding: 2px 15px;
+  background-color: #f2f2f2;
+}

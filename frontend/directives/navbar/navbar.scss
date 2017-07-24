@@ -1,7 +1,7 @@
 .app-navbar {
-    background-color: hsl(165, 44%, 58%);
     margin-bottom: 0;
     border: none;
+    z-index: 10001;
 }
 
 .navbar .app-navbar__menu-btn {
@@ -20,6 +20,9 @@
 }
 
 .app-navbar__container {
+    position: fixed;
+    width: 100%;
+    background-color: hsl(165, 44%, 58%);
     display: flex;
     align-items: center;
 }

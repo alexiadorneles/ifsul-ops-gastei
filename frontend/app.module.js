@@ -1,7 +1,9 @@
 import angular from 'angular';
 import ngRoute from 'angular-route';
+
 import 'sweetalert/dist/sweetalert.css'
-import './assets/css/style.css';
+import './assets/css/style.css'
+import './components/navbar/navbar.scss'
 
 import routing from './app.route';
 
@@ -18,4 +20,10 @@ import gasto_fixo from './submodules/gasto_fixo'
 
 angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
   cadastro, login, gasto_fixo])
+    .directive('navbar', () => {
+      return {
+          restrict: 'E',
+          templateUrl: './components/navbar/navbar.html'
+      }
+    })
     .config(routing)

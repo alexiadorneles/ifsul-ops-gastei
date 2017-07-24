@@ -9,6 +9,11 @@
     background-color: hsl(165, 44%, 58%);
     border: none;
 
+    &:hover, &:focus {
+        outline: hsla(0, 0%, 0%, 0.28) solid 1px;    
+        color: hsl(0, 0%, 0%);
+    }
+
     span {
         transform: scale(1.4);
     }

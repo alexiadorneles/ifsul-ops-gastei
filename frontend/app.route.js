@@ -46,5 +46,9 @@ export default function routing ($routeProvider, $locationProvider) {
         controller: 'GastoFixoController',
         templateUrl: '/submodules/gasto_fixo/gasto-fixo.html'
     })
+    .when('/home', {
+        controller: 'HomeController',
+        templateUrl: '/submodules/home/home.html'
+    })
 };
 

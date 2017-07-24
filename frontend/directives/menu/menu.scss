@@ -45,3 +45,30 @@
         padding: .5em;
     }
 }
+
+/* User Info */
+.userinfo {
+    display: grid;
+    grid-template-areas: "picture  name"
+                         "picture  money";
+
+    background-color: #524f4f;
+    color: white;
+    padding: 1em;
+    grid-gap: 1em;
+}
+
+.userinfo__picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    grid-area: picture;
+}
+
+.userinfo__name {
+    grid-area: name;
+}
+
+.userinfo__money {
+    grid-area: money;
+}

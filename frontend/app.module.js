@@ -33,5 +33,5 @@ angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arqui
           templateUrl: './components/navbar/navbar.html'
       }
     }
-  })
+  )
   .config(routing)

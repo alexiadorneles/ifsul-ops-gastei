@@ -61,17 +61,17 @@
         </div>
       </div>
       <div class="adicionar-objetivo">
-        <h4>+ adicionar objetivo</h4>
+        <h4 ng-click="adicionarObjetivo()">+ adicionar objetivo</h4>
       </div>
       <div class="outros">
         <div class="simulador">
           <div class="botao-container">
-            <button class="botao">Simular Compra</button>
+            <button class="botao" ng-click="simularCompra()">Simular Compra</button>
           </div>
         </div>
         <div class="arquivado">
           <div class="botao-container">
-            <button class="botao">arquivados <img class="arquivar" src="/assets/img/arquivo.svg"></button>
+            <button class="botao" ng-click="objetivosArquivados()">arquivados <img class="arquivar" src="/assets/img/arquivo.svg"></button>
           </div>
         </div>
       </div>

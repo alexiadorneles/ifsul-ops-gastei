@@ -1,0 +1,59 @@
+<div class="informacoes">
+
+      <img class ="icon" src='assets/img/icone.png'> </img>
+
+    <div class="dados">
+      <h2> Nome </h2>
+      <h3> Salário </h3>
+    </div>
+
+</div>
+
+<div class="editar-perfil">
+  <h1>Editar Perfil</h1>
+
+  <form class="form">
+
+    <label class="labels" for="editarNome"> Editar Nome: </label>
+    <input class="inputs" placeholder="Nome Sobrenome" type="text" name="editarNome">
+
+    <label class="labels" for="editarEmail"> Editar E-mail: </label>
+    <input class="inputs" placeholder="email@exemplo.com" type="email" name="editarEmail">
+
+    <label class="labels" for="editarSalario"> Editar Salário: </label>
+    <input class="inputs" placeholder="R$000,00" type="text" name="editarSalario">
+
+  <p>Editar Senha:</p>
+
+    <label class="labels" for="editarSenha"> Senha Atual: </label>
+    <img class="show-password" src="/assets/img/show-password.png" ng-click="alternarShowPassword()">
+    <input class="inputs" placeholder="*****" ng-show="showPassword" type="text" ng-model="password" name="senhaAtual">
+    <input class="inputs" placeholder="*****" ng-hide="showPassword" type="password" ng-model="password" name="senhaAtual">
+
+    <label class="labels" for="novaSenha"> Nova Senha: </label>
+    <img class="show-password" src="/assets/img/show-password.png" ng-click="alternarShowNewPassword()">
+    <input class="inputs" placeholder="*****" ng-show="showNewPassword" type="text" ng-model="newPassword" name="novaSenha">
+    <input class="inputs" placeholder="*****" ng-hide="showNewPassword" type="password" ng-model="newPassword" name="novaSenha">
+
+    <label class="labels" for="confirmarSenha"> Confirmar Senha: </label>
+    <img class="show-password" src="/assets/img/show-password.png" ng-click="alternarShowRepeatPassword()">
+    <input class="inputs" placeholder="*****" ng-show="showRepeatPassword" type="text" ng-model="repeatPassword" name="confirmarSenha">
+    <input class="inputs" placeholder="*****" ng-hide="showRepeatPassword" type="password" ng-model="repeatPassword" name= "confirmarSenha">
+
+
+<div class="botoes">
+<div class="salvar">
+     <div class="botao-container">
+       <button class="botao" type="submit"> Salvar </button>
+     </div>
+  </div>
+
+  <div class="cancelar">
+      <div class="botao-container">
+        <button class="botao"> Cancelar </button>
+  </div>
+</div>
+</div>
+
+  </form>
+</div>

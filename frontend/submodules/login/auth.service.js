@@ -1,13 +1,13 @@
 // Adiciona header de autenticação, se existir
-angular.module('app.login').config(function ($httpProvider) {
+export function headerConfig($httpProvider) {
   let headerAuth = JSON.parse(window.localStorage.getItem('ngStorage-headerAuth'));
   if (headerAuth) {
     $httpProvider.defaults.headers.common.Authorization = headerAuth;
   }
-});
+}
 
-// Service de autenticação
-angular.module('app.login').factory('authService', function (authConfig, $http, $q, $location, $localStorage) {
+// Factory de autenticação
+export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/) {
 
   // Utiliza constant de configuração
   let urlUsuario = authConfig.urlUsuario;
@@ -32,11 +32,11 @@ angular.module('app.login').factory('authService', function (authConfig, $http, 
       function (response) {
 
         // Adiciona usuário e header ao localstorage
-        $localStorage.usuarioLogado = response.data;
-        $localStorage.headerAuth = montarHeader(usuario)['Authorization'];
+        //$localStorage.usuarioLogado = response.data;
+        //$localStorage.headerAuth = montarHeader(usuario)['Authorization'];
 
         // Adiciona header de autenticação em todos os próximos requests
-        $http.defaults.headers.common.Authorization = $localStorage.headerAuth;
+        //$http.defaults.headers.common.Authorization = $localStorage.headerAuth;
 
         // Redireciona se tiver uma url configurada
         if (urlPrivado) {
@@ -63,8 +63,8 @@ angular.module('app.login').factory('authService', function (authConfig, $http, 
   function logout() {
 
     // Limpa localstorage e http headers adicionados
-    delete $localStorage.usuarioLogado;
-    delete $localStorage.Authorization;
+    //delete $localStorage.usuarioLogado;
+    //delete $localStorage.Authorization;
     $http.defaults.headers.common.Authorization = undefined;
 
     // Redireciona se tiver uma url configurada
@@ -74,18 +74,12 @@ angular.module('app.login').factory('authService', function (authConfig, $http, 
   };
 
   function getUsuario() {
-    return $localStorage.usuarioLogado;
+    //return $localStorage.usuarioLogado;
   };
 
-  function isAutenticado() {
+  function isAuthenticated() {
     return !!getUsuario();
   };
-
-  function possuiPermissao(permissao) {
-    return isAutenticado() &&
-      getUsuario().Permissoes.find((p) => p.Nome === permissao);
-  };
-
 
   // PROMISE
 
@@ -93,7 +87,7 @@ angular.module('app.login').factory('authService', function (authConfig, $http, 
 
     let deferred = $q.defer();
 
-    if (isAutenticado()) {
+    if (isAuthenticated()) {
       deferred.resolve();
 
     } else {
@@ -115,8 +109,7 @@ angular.module('app.login').factory('authService', function (authConfig, $http, 
     login: login,
     logout: logout,
     getUsuario: getUsuario,
-    possuiPermissao: possuiPermissao,
-    isAutenticado: isAutenticado,
+    isAuthenticated: isAuthenticated,
     isAutenticadoPromise: isAutenticadoPromise
   };
-});
+}

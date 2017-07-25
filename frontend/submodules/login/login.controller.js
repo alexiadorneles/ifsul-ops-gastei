@@ -1,8 +1,7 @@
 import swal from 'sweetalert'
 
-export default function($location, $scope, angularAuth0, loginService){
+export default function($location, $scope, authFactory){
 
-  let vm = this
-  vm.auth = loginService
+  $scope.auth = authFactory;
 
 }

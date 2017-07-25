@@ -6,6 +6,7 @@ import './login.scss'
 import config from './login.config'
 import LoginController from './login.controller'
 import loginService from './login.service'
+import authService from './auth.service'
 
 export default angular.module('app.login', [ngRoute, angularAuth0])
     .config(config)

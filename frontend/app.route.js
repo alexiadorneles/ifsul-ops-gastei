@@ -50,5 +50,8 @@ export default function routing ($routeProvider, $locationProvider) {
         controller: 'HomeController',
         templateUrl: '/submodules/home/home.html'
     })
+    .when('/editar-perfil', {
+      controller: 'EditarPerfilController',
+      templateUrl: '/submodules/editar_perfil/editar-perfil.html'
+    })
 };
-

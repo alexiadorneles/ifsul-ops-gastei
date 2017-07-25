@@ -35,12 +35,7 @@ export default function routing ($routeProvider, $locationProvider) {
     })
     .when('/login', {
       controller: 'LoginController',
-      controllerAs: 'vm',
       templateUrl: '/submodules/login/login.html'
-    })
-    .when('/callback', {
-      controller: 'CallbackController',
-      templateUrl: '/submodules/login/callback.html'
     })
     .when('/gasto-fixo', {
         controller: 'GastoFixoController',

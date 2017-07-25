@@ -1,13 +1,14 @@
 /*Simulação*/
 .simulacao{
-  margin: 5% 0 5% 0;
-  padding-top: 10px;
+  margin: 0 0 5% 0;
   display: flex;
   justify-content: center;
+  font-size: 20px;
 }
 
 .simulacao-container {
-  width: 60%;
+  width: 80%;
+  margin-top: 10%;
   margin-bottom: 50px;
   background: #66C4AD;
   border: 2px solid #DDDADA;
@@ -20,10 +21,14 @@
   font-weight: bold;
 }
 
+.simulacao-container > .objetivos{
+  background-color: #FFFFFF;
+}
+
 .simulacao-container > .objetivos > .selecionar-todos {
   display: flex;
   justify-content: space-between;
-  margin: 0 12% 0 12%;
+  margin: 0 10% 0 10%;
 }
 
 .objetivos-simulacao-container {
@@ -35,9 +40,15 @@
 
 .simulacao-container > .objetivos > .botao-container > .botao {
   width: 50%;
+  margin-bottom: 5%;
 }
 
 .simulacao-container > .objetivos > .botao-container > .botao:active {
   font-size: 16px;
   width: 35%;
+}
+
+input[type="checkbox"] {
+	width: 20px;
+  height: 20px;
 }

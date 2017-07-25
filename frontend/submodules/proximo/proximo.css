@@ -1,10 +1,4 @@
-body {
-  width: 100%;
-}
-h1{
-  font-size: 70px;
-}
-.salario {
+.saldo_proximo {
   width:100%;
   height:200px;
   float:left;
@@ -24,53 +18,4 @@ h1{
   width:100%;
   height:70%;
   float:left;
-}
-
-
-/* Gasto */
-.gasto {
-
-  width: 80%;
-  height: auto;
-  background: #f2f2f2;
-  border: 2px solid #DDDADA;
-  box-sizing: border-box;
-  transition-duration: 1s;
-    margin-bottom: 25px;
-}
-
-.gastos-title {
-  width: 100%;
-  color: black;
-  text-align: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.gastos {
-  width: 100%;
-  background-color: #FFFFFF;
-  border: 1px solid #DDDADA;
-  box-sizing: border-box;
-  padding: 10px 0 10px 0;
-
-}
-
-.gastos-container{
-  padding-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.gastos-total {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.gastos-total > #total {
-  padding-left: 5px;
 }

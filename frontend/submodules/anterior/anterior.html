@@ -1,61 +1,91 @@
 
-    <div class="salario">
-      <h1>- R$ 20,00</h1>
+<div class="saldo_anterior">
+  <h1>- R$ 20,00</h1>
+</div>
+
+
+<div class="conteudo">
+
+  <!-- objetivo -->
+  <div class="objetivo wrapper">
+    <div class="title" ng-click="exibirObjetivos()">
+      OBJETIVOS
     </div>
-
-
-    <div class="conteudo">
-
-      <div class="gasto">
-          <div class="gastos-title" ng-click="exibirGastos()">
-            <h2>Gastos Fixos</h2>
-          </div>
-          <div class="gastos" ng-show="showGastos">
-            <div class="gastos-container">
-              <span>Item 1</span>
-              <span>R$ 10,00</span>
-              <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
-            </div>
-            <div class="gastos-container">
-              <span>Item 2</span>
-              <span>R$ 20,00</span>
-              <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
-            </div>
-            <div class="gastos-total">
-              <span>Total:</span>
-              <span id="total">R$ 30,00</span>
-            </div>
-          </div>
-
-
+    <div class="objetivos" ng-show="showObjetivos">
+      <div class="objetivos-completos-container">
+        <span>Item 1</span>
+        <span>R$ 10,00</span>
+        <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
       </div>
+      <div class="objetivos-completos-container">
+        <span>Item 2</span>
+        <span>R$ 20,00</span>
+        <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
+      </div>
+      <div class="objetivos-completos-total">
+        <span>Total:</span>
+        <span id="total">R$ 30,00</span>
+      </div>
+    </div>
+
+
+  </div>
 
 
 
-            <div class="objetivo">
-                <div class="objetivos-title" ng-click="exibirObjetivos()">
-                  <h2>Objetivos</h2>
-                </div>
-                <div class="objetivos" ng-show="showObjetivos">
-                  <div class="objetivos-container">
-                    <span>Item 1</span>
-                    <span>R$ 10,00</span>
-                    <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
-                  </div>
-                  <div class="objetivos-container">
-                    <span>Item 2</span>
-                    <span>R$ 20,00</span>
-                    <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
-                  </div>
-                  <div class="objetivos-total">
-                    <span>Total:</span>
-                    <span id="total">R$ 30,00</span>
-                  </div>
-                </div>
+  <!-- gasto -->
 
+  <div class="title wrapper" ng-click="exibirGastos()">
+    <!-- TODO: adicionar função na controller para pegar o nome do mês -->
+    <!-- GASTOS FIXOS DE {{mes.nome}} -->
+    GASTOS FIXOS
+  </div>
+  <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
+  <div class="gastos-fixos" ng-show="showGastos">
+    <div class="gastos-container" >
+      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+      <div class="gasto-title">
+        <h4>Gasto 1</h4>
+        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="mostrarOpcoes(gastoFixo)">
+      </div>
+      <div class="opcoes" ng-show="gastoFixo.opcoes=='true'">
+        <div>Editar</div>
+        <div>Excluir</div>
+      </div>
+      <div class="info">
+        <div class="">
+          <span class="type">Valor:</span> <span> R$ 120,00</span>
+        </div>
+        <div class="">
+          <span class="type">Periodo:</span> <span> 3 meses</span>
+        </div>
+        <div class="">
+          <span class="type">Categoria:</span> <span> Categoria 1</span>
+        </div>
+      </div>
+    </div>
 
-            </div>
-
-
+    <div class="gastos-container" >
+      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+      <div class="gasto-title">
+        <h4>Gasto 2</h4>
+        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
+      </div>
+      <div class="info">
+        <div class="">
+          <span class="type">Valor:</span> <span> R$ 50,00</span>
+        </div>
+        <div class="">
+          <span class="type">Periodo:</span> <span> 12 meses</span>
+        </div>
+        <div class="">
+          <span class="type">Categoria:</span> <span> Categoria 1</span>
+        </div>
+      </div>
+    </div>
 
     </div>
+
+
+
+</div>

@@ -52,3 +52,31 @@
   padding: 8px;
   margin: 20px auto;
 }
+
+.opcoes {
+  font-weight: 600;
+  color: #88cfbd;
+  text-transform: capitalize;
+  font-size: 18px;
+  float: right;
+  padding: 2px 15px;
+  background-color: #f2f2f2;
+}
+
+.inputs {
+  outline: none;
+}
+
+.gastos-container > .bloco {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.gastos-container > .bloco > .inputs {
+  width: 70%;
+  display: inline-block;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}

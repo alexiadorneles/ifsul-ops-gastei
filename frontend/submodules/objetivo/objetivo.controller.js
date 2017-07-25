@@ -5,6 +5,9 @@ export default function ObjetivoController ($location, $scope){
   $scope.completar = completar;
   $scope.arquivar = arquivar;
   $scope.excluir = excluir;
+  $scope.adicionarObjetivo = adicionarObjetivo;
+  $scope.simularCompra = simularCompra;
+  $scope.objetivosArquivados = objetivosArquivados;
   $scope.showObjetivosCompletos = false;
   $scope.showObjetivosIncompletos = false;
 
@@ -86,4 +89,17 @@ export default function ObjetivoController ($location, $scope){
       }
     });
   }
+
+  function adicionarObjetivo(){
+    $location.path('/objetivo/adicionar-objetivo');
+  }
+
+  function simularCompra(){
+    $location.path('/objetivo/simulacao');
+  }
+
+  function objetivosArquivados(){
+    $location.path('/objetivo/arquivados');
+  }
+
 }

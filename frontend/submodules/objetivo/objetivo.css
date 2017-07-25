@@ -69,13 +69,14 @@
 }
 
 .objetivos-incompletos > .adicionar-objetivo {
-  margin-top: 15px;
+  margin: 15px 0 0 0;
   text-align: center;
   text-transform: uppercase;
 }
 
 .objetivos-incompletos > .adicionar-objetivo > h4 {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .outros {

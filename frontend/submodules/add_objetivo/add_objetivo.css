@@ -7,6 +7,10 @@
   flex-direction: column;
 }
 
+.adicionar-objetivo-container{
+  margin-top: 10%;
+}
+
 .inputs{
   border: none;
   border-bottom: 3px solid #66c4ad;

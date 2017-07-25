@@ -1,10 +1,8 @@
 body {
   width: 100%;
 }
-h1{
-  font-size: 70px;
-}
-.salario {
+
+.saldo {
   width:100%;
   height:200px;
   float:left;
@@ -26,135 +24,10 @@ h1{
   float:left;
 }
 
-/*gasto*/
-.gastos-fixos > .gastos-container {
-  display: block;
-  padding: 20px;
-}
-
-.gastos-fixos {
-  width: 80%;
-  border: 2px solid #9f9f9f;
-  border-top: none;
-}
-
-.title {
-  width: 80%;
-  font-weight: bold;
-  font-size: 22px;
-  color: #828282;
-  border: 2px solid #9f9f9f;
-  padding: 8px;
-  text-align: center;
-}
-
-.gastos-fixos > .gastos-container > .gasto-title > h4 {
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0;
-  display: inline-block;
-}
-
-.gasto-title {
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.info {
-  font-size: 20px;
-  padding-left: 15%;
-}
-
-.type {
-  color: #7b7b7b;
-}
-
-@media screen and (max-width: 420px) {
-  .gastos-fixos > .gastos-container > .gasto-title > .deletar {
-    width: 12%;
-  }
-}
-
-.gastos-fixos > .botao-container > .botao {
-  padding: 8px;
-  margin: 20px auto;
-}
-
-.opcoes {
-  font-weight: 600;
-  color: #88cfbd;
-  text-transform: capitalize;
-  font-size: 18px;
-  float: right;
-  padding: 2px 15px;
-  background-color: #f2f2f2;
-}
-
-.inputs {
-  outline: none;
-}
-
-.gastos-container > .bloco {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.gastos-container > .bloco > .inputs {
-  width: 70%;
-  display: inline-block;
-}
-
-.margin-bottom {
-  margin-bottom: 15px;
-}
-
-
-/* Objetivo */
-.conteudo > .objetivo{
-
-  width: 80%;
-  height: auto;
-  background: #f2f2f2;
-  border: 2px solid #DDDADA;
-  box-sizing: border-box;
-  transition-duration: 1s;
-    margin-bottom: 25px;
-}
-
-.objetivos-title{
+.conteudo > .objetivo {
   width: 100%;
-  color: black;
-  text-align: center;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
 }
+.wrapper{
+padding: 20px 0;
 
-.objetivos{
-  width: 100%;
-  background-color: #FFFFFF;
-  border: 1px solid #DDDADA;
-  box-sizing: border-box;
-  padding: 10px 0 10px 0;
-
-}
-
-.objetivos-container{
-  padding-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.objetivos-total {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.objetivos-total, .gastos-total > #total {
-  padding-left: 5px;
 }

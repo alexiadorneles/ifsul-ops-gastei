@@ -3,16 +3,15 @@
       <h1>R$ 250,00</h1>
     </div>
 
-
     <!-- ng-include com o menu  -->
-    <div class="conteudo">
-      <div class="title">
+    <div class="conteudo" >
+      <div class="title" ng-click="exibirGastos()">
         <!-- TODO: adicionar função na controller para pegar o nome do mês -->
         <!-- GASTOS FIXOS DE {{mes.nome}} -->
-        GASTOS FIXOS DE JULHO
+        GASTOS FIXOS
       </div>
       <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
-      <div class="gastos-fixos">
+      <div class="gastos-fixos" ng-show="showGastos">
         <div class="gastos-container" >
           <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
           <div class="gasto-title">

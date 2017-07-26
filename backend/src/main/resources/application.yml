@@ -3,8 +3,13 @@ spring:
       rest:
         base-path: /api
     datasource:
-      url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
-      driver-class-name: org.h2.Driver
+      url: jdbc:mysql://127.0.0.1:3306/opsgastei?useSSL=false
+      username: root
+      password: 
+      driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+      hibernate:
+        ddl-auto: update
 
 ---
 
@@ -14,10 +19,6 @@ spring:
       rest:
         base-path: /api
     datasource:
-      url: jdbc:mysql://172.17.0.2:3306/opsgastei?useSSL=false
-      username: root
-      password: toor
-      driver-class-name: com.mysql.jdbc.Driver
-    jpa:
-      hibernate:
-        ddl-auto: update
+      url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+      driver-class-name: org.h2.Driver
+      

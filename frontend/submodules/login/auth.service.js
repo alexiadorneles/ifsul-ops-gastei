@@ -99,7 +99,7 @@ export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/)
   };
 
   function montarHeader(usuario) {
-    let hash = window.btoa(`${usuario.idAutorizacao}:${usuario.senha}`);
+    let hash = window.btoa(`${usuario.email}:${usuario.senha}`);
     return {
       'Authorization': `Basic ${hash}`
     };

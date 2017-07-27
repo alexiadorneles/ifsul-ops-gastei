@@ -4,15 +4,15 @@
   <h1>Login</h1>
   <button
     class="btn btn-primary btn-margin"
-    ng-if="!vm.auth.isAuthenticated()"
-    ng-click="vm.auth.login()">
+    ng-if="!auth.isAuthenticated()"
+    ng-click="loginGoogle()">
       Log In
   </button>
 
   <button
     class="btn btn-primary btn-margin"
-    ng-if="vm.auth.isAuthenticated()"
-    ng-click="vm.auth.logout()">
+    ng-if="auth.isAuthenticated()"
+    ng-click="auth.logout()">
       Log Out
   </button>
 

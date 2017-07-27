@@ -1,20 +1,16 @@
 import angular from 'angular'
 import ngRoute from 'angular-route'
-import angularAuth0 from 'angular-auth0'
 
 import './login.scss'
 import config from './login.config'
 import LoginController from './login.controller'
-import loginService from './login.service'
+import {authFactory, headerConfig} from './auth.service'
+import usuarioService from '../../services/usuario.service'
 
-export default angular.module('app.login', [ngRoute, angularAuth0])
+export default angular.module('app.login', [ngRoute])
     .config(config)
     .controller("LoginController", LoginController)
-    .controller('CallbackController', () => {})
-    .service("loginService", loginService)
-    .run(run)
+    .service("authService", headerConfig)
+    .service("usuarioService", usuarioService)
+    .factory("authFactory", authFactory)
     .name;
-
-function run(loginService) {
-    loginService.handleAuthentication();
-}

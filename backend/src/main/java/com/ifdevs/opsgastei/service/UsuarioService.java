@@ -21,4 +21,27 @@ public class UsuarioService {
     Usuario findUsuarioByEmail(String email) {
         return repository.findByEmail(email);
     }
+
+    public Iterable<Usuario> findAll() {
+        return repository.findAll();
+    }
+
+    public Usuario verificarUsuario(Usuario usuario) {
+        Usuario autorizado = this.findUsuarioByEmail(usuario.getEmail());
+        if (autorizado != null) {
+            return autorizado;
+        } else {
+            return this.save(usuario);
+        }
+    }
+
+    public Usuario update(Usuario usuario) {
+        return repository.save(usuario);
+    }
+
+    private Usuario save(Usuario usuario) {
+        usuario.criptografarSenha();
+        return repository.save(usuario);
+    }
+
 }

@@ -1,12 +1,18 @@
-export default function routing ($routeProvider, angularAuth0Provider) {
+export default function routing ($routeProvider) {
 
-    // Initialization for the angular-auth0 library
-    angularAuth0Provider.init({
-      clientID: '4fzJ7Zcm7WdmDCw15KsyRfQTkAYWW6Oc',
-      domain: 'opsgastei.auth0.com',
-      responseType: 'token id_token',
-      audience: 'https://opsgastei.auth0.com/userinfo',
-      redirectUri: 'http://localhost:9000/callback',
-      scope: 'openid'
-    });
+    
+    // GOOGLE
+    GoogleInit();
+    function GoogleInit() {
+        let auth2;
+        gapi.load('auth2', function () {
+            auth2 = gapi.auth2.init({
+                client_id: '645679162235-cuol995dddui8h7g4t2d6uci91i3tanv.apps.googleusercontent.com',
+                fetch_basic_profile: true,
+                scope: 'profile'
+            })
+        })
+        return auth2;
+    }
+
 };

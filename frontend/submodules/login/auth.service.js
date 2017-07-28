@@ -7,7 +7,7 @@ export function headerConfig($httpProvider) {
 }
 
 // Factory de autenticação
-export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/) {
+export function authFactory(authConfig, $http, $q, $location, $localStorage) {
 
   // Utiliza constant de configuração
   let urlUsuario = authConfig.urlUsuario;
@@ -32,11 +32,11 @@ export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/)
       function (response) {
 
         // Adiciona usuário e header ao localstorage
-        //$localStorage.usuarioLogado = response.data;
-        //$localStorage.headerAuth = montarHeader(usuario)['Authorization'];
+        $localStorage.usuarioLogado = response.data;
+        $localStorage.headerAuth = montarHeader(usuario)['Authorization'];
 
         // Adiciona header de autenticação em todos os próximos requests
-        //$http.defaults.headers.common.Authorization = $localStorage.headerAuth;
+        $http.defaults.headers.common.Authorization = $localStorage.headerAuth;
 
         // Redireciona se tiver uma url configurada
         if (urlPrivado) {
@@ -63,8 +63,8 @@ export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/)
   function logout() {
 
     // Limpa localstorage e http headers adicionados
-    //delete $localStorage.usuarioLogado;
-    //delete $localStorage.Authorization;
+    delete $localStorage.usuarioLogado;
+    delete $localStorage.Authorization;
     $http.defaults.headers.common.Authorization = undefined;
 
     // Redireciona se tiver uma url configurada
@@ -74,7 +74,7 @@ export function authFactory(authConfig, $http, $q, $location, /*$localStorage*/)
   };
 
   function getUsuario() {
-    //return $localStorage.usuarioLogado;
+    return $localStorage.usuarioLogado;
   };
 
   function isAuthenticated() {

@@ -1,9 +1,9 @@
 package com.ifdevs.opsgastei.model;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -26,15 +26,21 @@ public class Mes {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @ManyToMany
-    @JoinTable(name="objetivo_mes",
-            joinColumns={@JoinColumn(name="id_mes")},
-            inverseJoinColumns={@JoinColumn(name="id_objetivo")})
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "objetivo_mes",
+            joinColumns = {
+                @JoinColumn(name = "id_mes")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "id_objetivo")})
     private Set<Objetivo> objetivos;
 
-    @OneToMany(mappedBy = "primaryKey.mes",
-            cascade = CascadeType.ALL)
-    private Set<GastoFixoMes> gastoFixoMes;
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "mes_gastos_fixos",
+            joinColumns = {
+                @JoinColumn(name = "mes_id")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "gastos_fixos_id")})
+    private Set<GastoFixo> gastosFixos;
 
     public Long getId() {
         return id;
@@ -76,11 +82,12 @@ public class Mes {
         this.objetivos = objetivos;
     }
 
-    public Set<GastoFixoMes> getGastoFixoMes() {
-        return gastoFixoMes;
+    public Set<GastoFixo> getGastosFixos() {
+        return gastosFixos;
     }
 
-    public void setGastoFixoMes(Set<GastoFixoMes> gastoFixoMes) {
-        this.gastoFixoMes = gastoFixoMes;
+    public void setGastosFixos(Set<GastoFixo> gastosFixos) {
+        this.gastosFixos = gastosFixos;
     }
+
 }

@@ -1,9 +1,9 @@
 package com.ifdevs.opsgastei.model;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Set;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -24,9 +24,9 @@ public class GastoFixo {
 
     private int periodo;
 
-    @OneToMany(mappedBy = "primaryKey.gastoFixo",
-            cascade = CascadeType.ALL)
-    private Set<GastoFixoMes> gastoFixoMes;
+    @OneToMany(mappedBy = "gastosFixos",
+            cascade = CascadeType.PERSIST)
+    private Set<Mes> meses;
 
     public Long getId() {
         return id;
@@ -60,11 +60,12 @@ public class GastoFixo {
         this.periodo = periodo;
     }
 
-    public Set<GastoFixoMes> getGastoFixoMes() {
-        return gastoFixoMes;
+    public Set<Mes> getMeses() {
+        return meses;
     }
 
-    public void setGastoFixoMes(Set<GastoFixoMes> gastoFixoMes) {
-        this.gastoFixoMes = gastoFixoMes;
+    public void setMeses(Set<Mes> meses) {
+        this.meses = meses;
     }
+
 }

@@ -8,8 +8,8 @@ export default function ObjetivoController ($location, $scope){
   $scope.adicionarObjetivo = adicionarObjetivo;
   $scope.simularCompra = simularCompra;
   $scope.objetivosArquivados = objetivosArquivados;
-  $scope.showObjetivosCompletos = false;
-  $scope.showObjetivosIncompletos = false;
+  $scope.showObjetivosCompletos = true;
+  $scope.showObjetivosIncompletos = true;
 
   function exibirObjetivosCompletos(){
     if(!$scope.showObjetivosCompletos){

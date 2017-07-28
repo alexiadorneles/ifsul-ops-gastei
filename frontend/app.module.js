@@ -45,12 +45,12 @@ angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arqui
   })
   .config(routing)
   .constant('authConfig', {
-    
-    // Rota da API para autenticação de User 
-    urlUsuario: "localhost:9000/exemplo",
+
+    // Rota da API para autenticação de User
+    urlUsuario: "http://localhost:8080/usuarios",
 
     // Rota segura
-    urlPrivado: "/privado",
+    urlPrivado: "/objetivo",
 
     urlLogout: "/logout"
   })

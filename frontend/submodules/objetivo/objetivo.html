@@ -7,28 +7,8 @@
 <div class="conteudo" >
 
   <div class="objetivo">
-    <div class="completos">
-      <div class="completos-title" ng-click="exibirObjetivosCompletos()">
-        <h3>OBJETIVOS COMPLETOS</h3>
-      </div>
-      <div class="objetivos-completos" ng-show="showObjetivosCompletos">
-        <div class="objetivos-completos-container">
-          <span>Item 1</span>
-          <span>R$ 10,00</span>
-          <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
-        </div>
-        <div class="objetivos-completos-container">
-          <span>Item 2</span>
-          <span>R$ 20,00</span>
-          <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
-        </div>
-        <div class="objetivos-completos-total">
-          <span>Total:</span>
-          <span id="total">R$ 30,00</span>
-        </div>
-      </div>
-    </div>
 
+    <!-- INCOMPLETOS -->
     <div class="incompletos">
       <div class="incompletos-title" ng-click="exibirObjetivosIncompletos()">
         <h3>OBJETIVOS INCOMPLETOS</h3>
@@ -67,22 +47,46 @@
                           </div>
                         </div>
                         <div class="adicionar-objetivo">
-                          <h4 ng-click="adicionarObjetivo()">+ adicionar objetivo</h4>
+                          <h4>+ adicionar objetivo</h4>
                         </div>
                         <div class="outros">
                           <div class="simulador">
                             <div class="botao-container">
-                              <button class="botao" ng-click="simularCompra()">Simular Compra</button>
+                              <button class="botao">Simular Compra</button>
                             </div>
                           </div>
                           <div class="arquivado">
                             <div class="botao-container">
-                              <button class="botao" ng-click="objetivosArquivados()">arquivados <img class="arquivar" src="/assets/img/arquivo.svg"></button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
+                    <!-- COMPLETOS-->
+                    <div class="completos">
+                      <div class="completos-title" ng-click="exibirObjetivosCompletos()">
+                        <h3>OBJETIVOS COMPLETOS</h3>
+                      </div>
+                      <div class="objetivos-completos" ng-show="showObjetivosCompletos">
+                        <div class="objetivos-completos-container">
+                          <span>Item 1</span>
+                          <span>R$ 10,00</span>
+                          <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
+                        </div>
+                        <div class="objetivos-completos-container">
+                          <span>Item 2</span>
+                          <span>R$ 20,00</span>
+                          <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir()">
+                        </div>
+                        <div class="objetivos-completos-total">
+                          <span>Total:</span>
+                          <span id="total">R$ 30,00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                   </div>
 

@@ -21,6 +21,10 @@ public class Salario {
     @Temporal(TemporalType.DATE)
     private Date data;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
     public Long getId() {
         return id;
     }
@@ -43,5 +47,13 @@ public class Salario {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

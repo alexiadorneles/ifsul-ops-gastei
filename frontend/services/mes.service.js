@@ -1,4 +1,4 @@
-export default function usuarioService ($http) {
+export default function mesService ($http) {
 
     let url = 'http://localhost8080/meses';
 

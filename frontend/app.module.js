@@ -1,6 +1,7 @@
 // import angular libs
 import angular from 'angular'
 import ngRoute from 'angular-route'
+import ngstorage from 'ngstorage-webpack'
 
 // import global styles
 import 'sweetalert/dist/sweetalert.css'
@@ -24,7 +25,7 @@ import gasto_fixo from './submodules/gasto_fixo'
 import home from './submodules/home'
 
 
-angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
+angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
   cadastro, login, gasto_fixo, home])
   .directive('navbar', () => {
     return {
@@ -47,10 +48,10 @@ angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arqui
   .constant('authConfig', {
 
     // Rota da API para autenticação de User
-    urlUsuario: "http://localhost:8080/usuarios",
+    urlUsuario: "http://localhost:8080/authenticated-user",
 
     // Rota segura
     urlPrivado: "/objetivo",
 
-    urlLogout: "/logout"
+    urlLogout: "/login"
   })

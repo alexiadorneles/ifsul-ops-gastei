@@ -1,7 +1,7 @@
 package com.ifdevs.opsgastei.controller;
 
-import com.ifdevs.opsgastei.model.Usuario;
-import com.ifdevs.opsgastei.service.UsuarioService;
+import com.ifdevs.opsgastei.model.GastoFixo;
+import com.ifdevs.opsgastei.service.GastoFixoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,28 +12,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author alexia.pereira on 07/25/17
+ * @author alexia.pereira on 07/28/17
  */
 @RestController
-@RequestMapping("/usuarios")
-public class UsuarioController {
+@RequestMapping("/gastos-fixos")
+public class GastoFixoController {
 
     @Autowired
-    UsuarioService service;
+    GastoFixoService service;
 
     @GetMapping
-    public Iterable<Usuario> findAll() {
+    public Iterable<GastoFixo> findAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Usuario save(@RequestBody Usuario usuario) {
-        return service.verificarUsuario(usuario);
+    public GastoFixo save(@RequestBody GastoFixo gastoFixo) {
+        return service.save(gastoFixo);
     }
 
     @PutMapping
-    public Usuario update(@RequestBody Usuario usuario) {
-        return service.update(usuario);
+    public GastoFixo update(@RequestBody GastoFixo gastoFixo) {
+        return service.update(gastoFixo);
     }
 
 }

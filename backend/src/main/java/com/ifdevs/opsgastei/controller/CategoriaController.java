@@ -1,7 +1,7 @@
 package com.ifdevs.opsgastei.controller;
 
-import com.ifdevs.opsgastei.model.Usuario;
-import com.ifdevs.opsgastei.service.UsuarioService;
+import com.ifdevs.opsgastei.model.Categoria;
+import com.ifdevs.opsgastei.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,28 +12,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author alexia.pereira on 07/25/17
+ * @author alexia.pereira on 07/28/17
  */
 @RestController
-@RequestMapping("/usuarios")
-public class UsuarioController {
+@RequestMapping("/categorias")
+public class CategoriaController {
 
     @Autowired
-    UsuarioService service;
+    CategoriaService service;
 
     @GetMapping
-    public Iterable<Usuario> findAll() {
+    public Iterable<Categoria> findAll() {
         return service.findAll();
     }
 
     @PostMapping
-    public Usuario save(@RequestBody Usuario usuario) {
-        return service.verificarUsuario(usuario);
+    public Categoria save(@RequestBody Categoria categoria) {
+        return service.save(categoria);
     }
 
     @PutMapping
-    public Usuario update(@RequestBody Usuario usuario) {
-        return service.update(usuario);
+    public Categoria update(@RequestBody Categoria categoria) {
+        return service.update(categoria);
     }
 
 }

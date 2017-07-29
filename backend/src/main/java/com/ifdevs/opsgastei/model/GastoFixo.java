@@ -1,6 +1,7 @@
 package com.ifdevs.opsgastei.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -42,6 +43,10 @@ public class GastoFixo {
     @ManyToOne
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
+
+    @OneToMany
+    @JoinColumn(name = "id_gasto_fixo_snapshot")
+    private List<GastoFixoSnapshot> gastosFixosSnapshot;
 
     public Long getId() {
         return id;
@@ -113,5 +118,13 @@ public class GastoFixo {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<GastoFixoSnapshot> getGastosFixosSnapshot() {
+        return gastosFixosSnapshot;
+    }
+
+    public void setGastosFixosSnapshot(List<GastoFixoSnapshot> gastosFixosSnapshot) {
+        this.gastosFixosSnapshot = gastosFixosSnapshot;
     }
 }

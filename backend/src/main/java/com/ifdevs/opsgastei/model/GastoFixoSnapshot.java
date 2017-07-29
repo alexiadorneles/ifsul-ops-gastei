@@ -1,9 +1,6 @@
 package com.ifdevs.opsgastei.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -22,6 +19,10 @@ public class GastoFixoSnapshot {
 
     @NotNull
     private Date data;
+
+    @ManyToOne
+    @JoinColumn(name = "id_gasto_fixo")
+    private GastoFixo gastoFixo;
 
     public Long getId() {
         return id;
@@ -45,5 +46,13 @@ public class GastoFixoSnapshot {
 
     public void setData(Date data) {
         this.data = data;
+    }
+
+    public GastoFixo getGastoFixo() {
+        return gastoFixo;
+    }
+
+    public void setGastoFixo(GastoFixo gastoFixo) {
+        this.gastoFixo = gastoFixo;
     }
 }

@@ -1,6 +1,6 @@
 export default function mesService ($http) {
 
-    let url = 'http://localhost8080/meses';
+    let url = 'http://localhost:8080/meses';
 
     function criar(mes) {
       return $http.post(url, mes);

@@ -1,6 +1,6 @@
 export default function gastoFixoService ($http) {
 
-    let url = 'http://localhost8080/gastos-fixos';
+    let url = 'http://localhost:8080/gastos-fixos';
 
     function criar(gastoFixo) {
       return $http.post(url, gastoFixo);

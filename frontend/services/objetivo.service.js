@@ -1,6 +1,6 @@
 export default function objetivoService ($http) {
 
-    let url = 'http://localhost8080/objetivos';
+    let url = 'http://localhost:8080/objetivos';
 
     function criar(objetivo) {
       return $http.post(url, objetivo);

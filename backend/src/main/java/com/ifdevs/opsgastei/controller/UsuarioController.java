@@ -26,7 +26,7 @@ public class UsuarioController {
         return service.findAll();
     }
 
-    @PostMapping(value = "/salvar")
+    @PostMapping
     public Usuario save(@RequestBody Usuario usuario) {
         return service.verificarUsuario(usuario);
     }

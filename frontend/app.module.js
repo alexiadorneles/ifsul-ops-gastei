@@ -47,10 +47,10 @@ angular.module('app', [ngRoute, anterior, proximo, objetivo, add_objetivo, arqui
   .constant('authConfig', {
 
     // Rota da API para autenticação de User
-    urlUsuario: "http://localhost:8080/usuarios",
+    urlUsuario: "http://localhost:8080/authenticated-user",
 
     // Rota segura
     urlPrivado: "/objetivo",
 
-    urlLogout: "/logout"
+    urlLogout: "/login"
   })

@@ -36,7 +36,6 @@ export default function($location, $scope, authFactory, usuarioService){
         });
         localStorage.setItem('nome', usuario.nome);
         localStorage.setItem('foto', usuario.urlFoto);
-        $window.location.reload();
       },
       function (response) {
         swal({

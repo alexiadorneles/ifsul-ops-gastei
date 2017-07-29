@@ -35,6 +35,14 @@ public class GastoFixo {
     @NotNull
     private Integer duracaoMeses;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
+
     public Long getId() {
         return id;
     }
@@ -89,5 +97,21 @@ public class GastoFixo {
 
     public void setDuracaoMeses(Integer duracaoMeses) {
         this.duracaoMeses = duracaoMeses;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

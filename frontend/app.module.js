@@ -53,5 +53,7 @@ angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_obje
     // Rota segura
     urlPrivado: "/objetivo",
 
+    urlLogin: "/login",
+
     urlLogout: "/login"
   })

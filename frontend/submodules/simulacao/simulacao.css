@@ -10,19 +10,20 @@
   width: 80%;
   margin-top: 10%;
   margin-bottom: 50px;
-  background: #66C4AD;
-  border: 2px solid #DDDADA;
+  border: 2px solid #9f9f9f;
 }
 
-.simulacao-container > .title {
+.simulacao-container > .simulacao-title {
   width: 100%;
-  color: #FFFFFF;
+  color: #828282;
+  text-transform: uppercase;
+  border-bottom: 2px solid #9f9f9f;
   text-align: center;
   font-weight: bold;
 }
 
 .simulacao-container > .objetivos{
-  background-color: #FFFFFF;
+  margin-top: 5%;
 }
 
 .simulacao-container > .objetivos > .selecionar-todos {

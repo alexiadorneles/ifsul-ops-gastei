@@ -48,10 +48,10 @@ angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_obje
   .constant('authConfig', {
 
     // Rota da API para autenticação de User
-    urlUsuario: "http://localhost:8080/usuarios",
+    urlUsuario: "http://localhost:8080/authenticated-user",
 
     // Rota segura
     urlPrivado: "/objetivo",
 
-    urlLogout: "/logout"
+    urlLogout: "/login"
   })

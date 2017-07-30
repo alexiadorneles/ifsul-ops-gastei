@@ -8,9 +8,8 @@ import {authFactory, headerConfig} from './auth.service'
 import usuarioService from '../../services/usuario.service'
 
 export default angular.module('app.login', [ngRoute])
-    .config(config)
+    .config(headerConfig)
     .controller("LoginController", LoginController)
-    .service("authService", headerConfig)
     .service("usuarioService", usuarioService)
     .factory("authFactory", authFactory)
     .name;

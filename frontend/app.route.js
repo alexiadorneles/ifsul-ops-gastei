@@ -7,27 +7,57 @@ export default function routing ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/anterior', {
         controller: 'AnteriorController',
-        templateUrl: '/submodules/anterior/anterior.html'
+        templateUrl: '/submodules/anterior/anterior.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/proximo', {
         controller: 'ProximoController',
-        templateUrl: '/submodules/proximo/proximo.html'
+        templateUrl: '/submodules/proximo/proximo.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/objetivo', {
         controller: 'ObjetivoController',
-        templateUrl: '/submodules/objetivo/objetivo.html'
+        templateUrl: '/submodules/objetivo/objetivo.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/objetivo/adicionar-objetivo', {
         controller: 'AdicionarObjetivoController',
-        templateUrl: '/submodules/add_objetivo/add_objetivo.html'
+        templateUrl: '/submodules/add_objetivo/add_objetivo.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/objetivo/arquivados', {
         controller: 'ArquivadoController',
-        templateUrl: '/submodules/arquivado/arquivado.html'
+        templateUrl: '/submodules/arquivado/arquivado.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/objetivo/simulacao', {
         controller: 'SimulacaoController',
-        templateUrl: '/submodules/simulacao/simulacao.html'
+        templateUrl: '/submodules/simulacao/simulacao.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/cadastro', {
         controller: 'CadastroController',
@@ -39,7 +69,12 @@ export default function routing ($routeProvider, $locationProvider) {
     })
     .when('/gasto-fixo', {
         controller: 'GastoFixoController',
-        templateUrl: '/submodules/gasto_fixo/gasto-fixo.html'
+        templateUrl: '/submodules/gasto_fixo/gasto-fixo.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
     })
     .when('/home', {
         controller: 'HomeController',
@@ -47,6 +82,11 @@ export default function routing ($routeProvider, $locationProvider) {
     })
     .when('/editar-perfil', {
       controller: 'EditarPerfilController',
-      templateUrl: '/submodules/editar_perfil/editar-perfil.html'
+      templateUrl: '/submodules/editar_perfil/editar-perfil.html',
+      resolve: {
+        autenticado: function (authFactory) {
+          return authFactory.isAutenticadoPromise();
+        }
+      }
     })
 };

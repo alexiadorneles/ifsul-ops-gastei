@@ -24,26 +24,14 @@ import login from './submodules/login'
 import gasto_fixo from './submodules/gasto_fixo'
 import home from './submodules/home'
 
+// import directives
+import navbar from './directives/navbar'
+import menu from './directives/menu'
 
 angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
   cadastro, login, gasto_fixo, home])
-  .directive('navbar', () => {
-    return {
-      restrict: 'E',
-      templateUrl: './directives/navbar/navbar.html'
-    }
-  })
-  .directive('menu', () => {
-    return {
-      restrict: 'A',
-      templateUrl: './directives/menu/menu.html',
-      controller: $scope => {
-        $scope.showMenu = () => {
-          $scope.menuIsOpen = !$scope.menuIsOpen
-        }
-      }
-    }
-  })
+  .directive('navbar', navbar)
+  .directive('menu', menu)
   .config(routing)
   .constant('authConfig', {
 

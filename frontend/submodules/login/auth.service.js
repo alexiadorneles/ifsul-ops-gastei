@@ -1,13 +1,5 @@
-// Adiciona header de autenticação, se existir
-export function headerConfig($httpProvider) {
-  let headerAuth = JSON.parse(window.localStorage.getItem('ngStorage-headerAuth'));
-  if (headerAuth) {
-    $httpProvider.defaults.headers.common.Authorization = headerAuth;
-  }
-}
-
 // Factory de autenticação
-export function authFactory(authConfig, $http, $q, $location, $localStorage) {
+export default function authFactory(authConfig, $http, $q, $location, $localStorage) {
 
   // Utiliza constant de configuração
   let urlUsuario = authConfig.urlUsuario;

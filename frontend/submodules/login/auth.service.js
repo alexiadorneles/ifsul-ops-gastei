@@ -57,6 +57,7 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
     // Limpa localstorage e http headers adicionados
     delete $localStorage.usuarioLogado;
     delete $localStorage.Authorization;
+    delete $localStorage.usuario;
     $http.defaults.headers.common.Authorization = undefined;
 
     // Redireciona se tiver uma url configurada

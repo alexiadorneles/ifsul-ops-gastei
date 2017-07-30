@@ -1,6 +1,4 @@
-export default function routing ($routeProvider) {
-
-    
+export default function routing ($httpProvider) {
     // GOOGLE
     GoogleInit();
     function GoogleInit() {
@@ -15,4 +13,8 @@ export default function routing ($routeProvider) {
         return auth2;
     }
 
+    let headerAuth = JSON.parse(window.localStorage.getItem('ngStorage-headerAuth'));
+    if (headerAuth) {
+        $httpProvider.defaults.headers.common.Authorization = headerAuth;
+    }
 };

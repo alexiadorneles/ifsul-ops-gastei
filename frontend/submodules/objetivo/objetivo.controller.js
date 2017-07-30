@@ -10,6 +10,9 @@ export default function ObjetivoController ($location, $scope){
   $scope.objetivosArquivados = objetivosArquivados;
   $scope.showObjetivosCompletos = true;
   $scope.showObjetivosIncompletos = true;
+  $scope.exibirGastos = exibirGastos;
+  $scope.showGastos = true;
+
 
   function exibirObjetivosCompletos(){
     if(!$scope.showObjetivosCompletos){
@@ -24,6 +27,14 @@ export default function ObjetivoController ($location, $scope){
       $scope.showObjetivosIncompletos = true;
     }else{
       $scope.showObjetivosIncompletos = false;
+    }
+  }
+
+  function exibirGastos(){
+    if(!$scope.showGastos){
+      $scope.showGastos = true;
+    }else{
+      $scope.showGastos = false;
     }
   }
 

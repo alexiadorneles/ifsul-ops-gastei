@@ -4,3 +4,4 @@ bundles/
 backend/target/
 *.iml
 mvnw*
+backend/nbactions\.xml

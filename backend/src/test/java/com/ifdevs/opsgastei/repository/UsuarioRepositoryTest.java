@@ -15,28 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = "classpath:dataset/dataset.xml")
 public class UsuarioRepositoryTest extends BaseRepositoryTest {
 
-    @Autowired
-    private UsuarioRepository repository;
-    private Usuario usuario;
-
-    @Before
+    // TODO tests
     @Test
-    public void setUp(){
-        usuario = new Usuario();
-        usuario.setEmail("ifsul4@ifsul");
-        usuario.setSalario(3000.0);
-        usuario.setSenha("123");
-    }
-
-    @Test
-    public void testSave(){
-        assertNull(usuario.getId());
-        usuario = repository.save(usuario);
-        assertNotNull(usuario.getId());
-    }
-
-    @Test
-    public void testCount(){
-        assertEquals(3, repository.count());
+    public void contextLoads() {
     }
 }

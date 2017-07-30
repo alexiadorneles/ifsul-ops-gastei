@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataset>
-
-    <!-- CATEGORIA -->
+    <!-- TODO adicionar estrutura para testes
+    <!- - CATEGORIA - ->
     <categoria id="1" cor="#000000" nome="vestuário" />
 
-    <!-- USUARIO -->
+    <!- - USUARIO - ->
     <usuario id="1" email="teste1@teste" senha="plain" salario="1000" />
     <usuario id="2" email="teste2@teste" senha="plain" salario="2000" />
     <usuario id="3" email="teste3@teste" senha="plain" salario="1500" />
 
-    <!-- MES -->
+    <!- - MES - ->
     <mes id="1" data="2000-01-01" salario="1000" id_usuario="1" />
 
-    <!-- GASTO FIXO -->
+    <!- - GASTO FIXO - ->
     <gasto_fixo id="1" nome="luz" data="2000-01-01" periodo="6" />
 
-    <!-- GASTO FIXO MES -->
+    <!- - GASTO FIXO MES - ->
     <gasto_fixo_mes valor="50" id_gasto_fixo="1" id_mes="1" />
 
-    <!-- OBJETIVO -->
+    <!- - OBJETIVO - ->
     <objetivo id="1" nome="computador" valor="2000" status="0" />
 
-    <!-- OBJETIVO MES -->
+    <!- - OBJETIVO MES - ->
     <objetivo_mes id_mes="1" id_objetivo="1" />
 
+    -->
 
 </dataset>

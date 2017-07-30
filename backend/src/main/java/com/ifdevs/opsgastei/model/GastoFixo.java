@@ -1,6 +1,7 @@
 package com.ifdevs.opsgastei.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,15 +19,34 @@ public class GastoFixo {
     @NotNull
     private String nome;
 
-    @Temporal(TemporalType.DATE)
     @NotNull
-    private Date data;
+    private Double valor;
 
-    private int periodo;
+    @NotNull
+    private String recorrenciaPattern;
 
-    @OneToMany(mappedBy = "gastosFixos",
-            cascade = CascadeType.PERSIST)
-    private Set<Mes> meses;
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date inicioData;
+
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date fimData;
+
+    @NotNull
+    private Integer duracaoMeses;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
+
+    @OneToMany
+    @JoinColumn(name = "id_gasto_fixo_snapshot")
+    private List<GastoFixoSnapshot> gastosFixosSnapshot;
 
     public Long getId() {
         return id;
@@ -44,28 +64,67 @@ public class GastoFixo {
         this.nome = nome;
     }
 
-    public Date getData() {
-        return data;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
-    public int getPeriodo() {
-        return periodo;
+    public String getRecorrenciaPattern() {
+        return recorrenciaPattern;
     }
 
-    public void setPeriodo(int periodo) {
-        this.periodo = periodo;
+    public void setRecorrenciaPattern(String recorrenciaPattern) {
+        this.recorrenciaPattern = recorrenciaPattern;
     }
 
-    public Set<Mes> getMeses() {
-        return meses;
+    public Date getInicioData() {
+        return inicioData;
     }
 
-    public void setMeses(Set<Mes> meses) {
-        this.meses = meses;
+    public void setInicioData(Date inicioData) {
+        this.inicioData = inicioData;
     }
 
+    public Date getFimData() {
+        return fimData;
+    }
+
+    public void setFimData(Date fimData) {
+        this.fimData = fimData;
+    }
+
+    public Integer getDuracaoMeses() {
+        return duracaoMeses;
+    }
+
+    public void setDuracaoMeses(Integer duracaoMeses) {
+        this.duracaoMeses = duracaoMeses;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public List<GastoFixoSnapshot> getGastosFixosSnapshot() {
+        return gastosFixosSnapshot;
+    }
+
+    public void setGastosFixosSnapshot(List<GastoFixoSnapshot> gastosFixosSnapshot) {
+        this.gastosFixosSnapshot = gastosFixosSnapshot;
+    }
 }

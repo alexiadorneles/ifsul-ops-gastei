@@ -10,6 +10,7 @@ export default function($location, $scope, authFactory, usuarioService){
 
     auth2.signIn().then(function (response) {
       if (response.Zi) {
+        localStorage.setItem("picture", response.w3.Paa);
         let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea, salario: 0 };
         criarUsuario(usuario);
       }
@@ -35,7 +36,6 @@ export default function($location, $scope, authFactory, usuarioService){
           showConfirmButton: false
         });
         localStorage.setItem('nome', usuario.nome);
-        localStorage.setItem('foto', usuario.urlFoto);
       },
       function (response) {
         swal({

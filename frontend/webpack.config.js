@@ -11,6 +11,7 @@ module.exports = {
     entry: {
         bundle: "./app.module.js"
     },
+    devtool: "inline-source-map",
     output: {
         path: join(__dirname, 'bundles/'),
         filename: 'js/app-bundle.min.js',

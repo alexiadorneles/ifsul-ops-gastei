@@ -43,7 +43,7 @@
     }
     a {
         display: block;
-        padding: .5em;
+        padding: 6px .5em;
     }
 }
 
@@ -80,4 +80,9 @@
 
 .sidemenu__list > li > a:hover, .sidemenu__list > li > a:active, .sidemenu__list > li > a:focus {
   text-decoration: none;
+}
+
+.sidemenu__item--active {
+  background-color: #e4e4e4;
+  border-right: 7px solid #524f4f;
 }

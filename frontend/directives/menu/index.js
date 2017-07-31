@@ -2,7 +2,7 @@ export default function menu (authFactory){
     return {
         restrict: 'A',
         templateUrl: './directives/menu/menu.html',
-        controller: ($scope) => {
+        controller: ($scope, $location) => {
             init();
 
             $scope.showMenu = () => {
@@ -15,6 +15,10 @@ export default function menu (authFactory){
                     nome: localStorage.getItem("nome"),
                     picture: localStorage.getItem("picture")
                 };
+            }
+
+            $scope.verificarAtivo = function(urlEsperado){
+              return $location.$$absUrl.endsWith(urlEsperado)
             }
         }
     }

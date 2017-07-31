@@ -6,7 +6,7 @@ import ngRoute from 'angular-route'
 // import './directives/gasto-fixo.css'
 
 // import controller
-// import GastoFixoController from './directives/gasto-fixo.controller'
+import GastoFixoController from './gasto-fixo.controller'
 
 // import services
 import categoriaService from '../../services/categoria.service'
@@ -17,8 +17,6 @@ export default function gastoFixo() {
   return {
     restrict: 'E',
     templateUrl: './directives/gasto-fixo/gasto-fixo.html',
-    controller: () => {
-      alert("hey")
-    }
+    controller: GastoFixoController
   }
 }

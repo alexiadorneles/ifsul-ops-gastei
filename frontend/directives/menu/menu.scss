@@ -73,3 +73,11 @@
 .userinfo__money {
     grid-area: money;
 }
+
+.sidemenu__list > li:hover {
+  background-color: #e4e4e4;
+}
+
+.sidemenu__list > li > a:hover, .sidemenu__list > li > a:active, .sidemenu__list > li > a:focus {
+  text-decoration: none;
+}

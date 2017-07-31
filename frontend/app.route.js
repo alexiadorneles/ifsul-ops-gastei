@@ -68,7 +68,6 @@ export default function routing ($routeProvider, $locationProvider) {
       templateUrl: '/submodules/login/login.html'
     })
     .when('/gasto-fixo', {
-        controller: 'GastoFixoController',
         templateUrl: '/submodules/gasto_fixo/gasto-fixo.html',
         resolve: {
           autenticado: function (authFactory) {

@@ -50,26 +50,30 @@
     </div>
 
     <div class="gastos-container" ng-if="showAdicionar">
-    <!-- <div class="gastos-container"> -->
+      <!-- <div class="gastos-container"> -->
       <h3 class="margin-bottom">Novo Gasto Fixo: </h3>
       <div class="bloco">
         <label for="nome" class="labels type">Nome:</label>
-        <input id="nome" class="inputs" placeholder="Gasto 3" type="text" name="nome">
+        <input id="nome" class="inputs" placeholder="Gasto 3" type="text"
+               name="nome" ng-model="$parent.gastoFixo.nome">
       </div>
       <div class="bloco">
         <label for="valor" class="labels type">Valor:</label>
-        <input id="valor" class="inputs" placeholder="R$ 39,90" type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.5" name="valor">
+        <input id="valor" class="inputs" placeholder="R$ 39,90"
+               ng-model="$parent.gastoFixo.valor" type="number"
+               pattern="[0-9]+([\.,][0-9]+)?" step="0.5" name="valor">
       </div>
       <div class="bloco">
         <label for="periodo" class="labels type">Periodo:</label>
-        <input id="periodo" class="inputs" placeholder="2 meses" type="number" name="periodo">
+        <input id="periodo" class="inputs" placeholder="2 meses" type="number"
+               ng-model="$parent.gastoFixo.periodo" name="periodo">
       </div>
       <div class="bloco">
         <label for="categoria" class="labels type">Categoria:</label>
-          <select id="categoria" class="inputs"
-                  ng-options="categoria.nome for categoria in categorias"
-                  ng-model="$parent.selectedCategoria">
-          </select>
+        <select id="categoria" class="inputs"
+                ng-options="categoria.nome for categoria in categorias"
+                ng-model="$parent.gastoFixo.selectedCategoria">
+        </select>
       </div>
     </div>
 

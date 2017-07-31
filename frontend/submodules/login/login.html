@@ -1,21 +1,22 @@
-<section class="login">
-  <div ng-include="'components/logo.html'"></div>
+<div class="login-container">
+  <img src="/assets/img/back.svg" alt="">
+  <section class="login">
+    <div ng-include="'components/logo.html'"></div>
 
-  <div class="botao-container">
 
-    <button
-    class="botao"
-    ng-if="!auth.isAuthenticated()"
-    ng-click="loginGoogle()">
-    <img src="assets/img/google-icon.svg" alt="">
-    </button>
+      <div
+      class="botao-login"
+      ng-if="!auth.isAuthenticated()"
+      ng-click="loginGoogle()">
+      <img src="assets/img/google-icon.svg" alt="">
+    </div>
 
     <button
     class="botao"
     ng-if="auth.isAuthenticated()"
     ng-click="auth.logout()">
     Sign Out
-    </button>
-  </div>
+  </button>
 
 </section>
+</div>

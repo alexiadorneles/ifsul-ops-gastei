@@ -89,4 +89,8 @@ export default function routing ($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/inicial', {
+      controller: 'InicialController',
+      templateUrl: '/submodules/inicial/inicial.html'
+    })
 };

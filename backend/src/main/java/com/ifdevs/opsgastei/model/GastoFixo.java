@@ -17,6 +17,7 @@ public class GastoFixo {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String nome;
 
     @NotNull

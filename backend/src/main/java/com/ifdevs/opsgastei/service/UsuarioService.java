@@ -18,7 +18,7 @@ public class UsuarioService {
         this.repository = repository;
     }
 
-    Usuario findUsuarioByEmail(String email) {
+    public Usuario findUsuarioByEmail(String email) {
         return repository.findByEmail(email);
     }
 

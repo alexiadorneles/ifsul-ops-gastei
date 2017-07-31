@@ -17,12 +17,13 @@ public class GastoFixo {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String nome;
 
     @NotNull
     private Double valor;
 
-    @NotNull
+    //@NotNull TODO deletar, se nao necessario mais pra frente
     private String recorrenciaPattern;
 
     @NotNull
@@ -37,6 +38,7 @@ public class GastoFixo {
     private Integer duracaoMeses;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 

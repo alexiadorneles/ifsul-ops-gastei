@@ -5,12 +5,11 @@
     <!-- GASTOS FIXOS DE {{mes.nome}} -->
     GASTOS FIXOS DE JULHO
   </div>
-  <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
   <div class="gastos-fixos">
-    <div class="gastos-container" >
-      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+    <div class="gastos-container" ng-repeat="gastoFixo in gastosFixos">
+      <span>Gasto Fixo #{{gastosFixos.indexOf(gastoFixo) + 1}}</span>
       <div class="gasto-title">
-        <h4>Gasto 1</h4>
+        <h4>{{gastoFixo.nome}}</h4>
         <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="mostrarOpcoes(gastoFixo)">
       </div>
       <div class="opcoes" ng-show="gastoFixo.opcoes=='true'">
@@ -19,57 +18,41 @@
       </div>
       <div class="info">
         <div class="">
-          <span class="type">Valor:</span> <span> R$ 120,00</span>
+          <span class="type">Valor:</span> <span>R$ {{gastoFixo.valor}}</span>
         </div>
         <div class="">
-          <span class="type">Periodo:</span> <span> 3 meses</span>
+          <span class="type">Periodo:</span> <span>{{gastoFixo.duracaoMeses}}</span>
         </div>
         <div class="">
-          <span class="type">Categoria:</span> <span> Categoria 1</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="gastos-container" >
-      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
-      <div class="gasto-title">
-        <h4>Gasto 2</h4>
-        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
-      </div>
-      <div class="info">
-        <div class="">
-          <span class="type">Valor:</span> <span> R$ 50,00</span>
-        </div>
-        <div class="">
-          <span class="type">Periodo:</span> <span> 12 meses</span>
-        </div>
-        <div class="">
-          <span class="type">Categoria:</span> <span> Categoria 1</span>
+          <span class="type">Categoria:</span> <span>{{gastoFixo.categoria.nome}}</span>
         </div>
       </div>
     </div>
 
     <div class="gastos-container" ng-if="showAdicionar">
-    <!-- <div class="gastos-container"> -->
+      <!-- <div class="gastos-container"> -->
       <h3 class="margin-bottom">Novo Gasto Fixo: </h3>
       <div class="bloco">
         <label for="nome" class="labels type">Nome:</label>
-        <input class="inputs" placeholder="   Gasto 3" type="text" name="nome">
+        <input id="nome" class="inputs" placeholder="Gasto 3" type="text"
+               name="nome" ng-model="$parent.gastoFixo.nome">
       </div>
       <div class="bloco">
         <label for="valor" class="labels type">Valor:</label>
-        <input class="inputs" placeholder="   R$ 39,90" type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.5" name="valor">
+        <input id="valor" class="inputs" placeholder="R$ 39,90"
+               ng-model="$parent.gastoFixo.valor" type="number"
+               pattern="[0-9]+([\.,][0-9]+)?" step="0.5" name="valor">
       </div>
       <div class="bloco">
         <label for="periodo" class="labels type">Periodo:</label>
-        <input class="inputs" placeholder="   2 meses" type="number" name="periodo">
+        <input id="periodo" class="inputs" placeholder="2 meses" type="number"
+               ng-model="$parent.gastoFixo.periodo" name="periodo">
       </div>
       <div class="bloco">
         <label for="categoria" class="labels type">Categoria:</label>
-        <select class="inputs" name="categoria" ng-options="categoria.nome for categoria in categorias">
-          <option value="">
-            {{categoria.nome}}
-          </option>
+        <select id="categoria" class="inputs"
+                ng-options="categoria.nome for categoria in categorias"
+                ng-model="$parent.gastoFixo.selectedCategoria">
         </select>
       </div>
     </div>

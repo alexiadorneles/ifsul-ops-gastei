@@ -1,4 +1,4 @@
-export default function menu (){
+export default function menu (authFactory){
     return {
         restrict: 'A',
         templateUrl: './directives/menu/menu.html',
@@ -10,6 +10,7 @@ export default function menu (){
             };
 
             function init() {
+                $scope.logout = authFactory.logout;
                 $scope.usuario = {
                     nome: localStorage.getItem("nome"),
                     picture: localStorage.getItem("picture")

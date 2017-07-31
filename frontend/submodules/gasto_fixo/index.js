@@ -8,9 +8,11 @@ import './gasto-fixo.css'
 import GastoFixoController from './gasto-fixo.controller'
 
 // import services
-import categoriaService from './../../services/categoria.service'
+import categoriaService from '../../services/categoria.service'
+import gastoFixoService from '../../services/gasto-fixo.service'
 
 export default angular.module('app.gasto_fixo', [ngRoute])
   .controller('GastoFixoController', GastoFixoController)
   .service("categoriaService", categoriaService)
+  .service("gastoFixoService", gastoFixoService)
   .name;

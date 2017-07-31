@@ -1,10 +1,8 @@
 import swal from 'sweetalert'
-export default function GastoFixoController ($location, $scope) {
 
-  $scope.mostrarOpcoes = mostrarOpcoes;
-  $scope.mostrarAdicionar = mostrarAdicionar;
-  $scope.showAdicionar = false;
-  $scope.adicionar = adicionar;
+export default function GastoFixoController ($location, $scope, categoriaService) {
+
+  init()
 
   function mostrarOpcoes(gastoFixo) {
     gastoFixo.opcoes = gastoFixo.opcoes ? false : true;
@@ -15,7 +13,18 @@ export default function GastoFixoController ($location, $scope) {
   }
 
   function adicionar() {
-    // TODO: adicionar lógica de adicionar objetivo
+    console.log($scope.selectedCategoria);
   }
 
+  function init() {
+    $scope.mostrarOpcoes = mostrarOpcoes;
+    $scope.mostrarAdicionar = mostrarAdicionar;
+    $scope.showAdicionar = false;
+    $scope.adicionar = adicionar;
+    $scope.categorias = {};
+
+    categoriaService.buscarTodos().then( ( test )=> {
+      $scope.categorias = test.data;
+    })
+  }
 }

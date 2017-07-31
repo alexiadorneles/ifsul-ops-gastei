@@ -29,7 +29,11 @@ export default function GastoFixoController ($location, $scope, categoriaService
         duracaoMeses,
     };
 
-    gastoFixoService.criar(gastoFixo);
+    gastoFixoService.criar(gastoFixo).then( () => {
+      $scope.gastosFixos.push(gastoFixo);
+      $scope.showAdicionar = false;
+      $scope.gastoFixo = {};
+    })
   }
 
   function init() {
@@ -39,8 +43,12 @@ export default function GastoFixoController ($location, $scope, categoriaService
     $scope.adicionar = adicionar;
     $scope.categorias = {};
 
-    categoriaService.buscarTodos().then( ( test )=> {
-      $scope.categorias = test.data;
-    })
+    categoriaService.buscarTodos().then( response => {
+      $scope.categorias = response.data;
+    });
+
+    gastoFixoService.buscarTodos().then( response => {
+      $scope.gastosFixos = response.data;
+    });
   }
 }

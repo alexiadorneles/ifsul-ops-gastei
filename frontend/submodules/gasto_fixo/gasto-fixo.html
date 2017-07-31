@@ -5,12 +5,11 @@
     <!-- GASTOS FIXOS DE {{mes.nome}} -->
     GASTOS FIXOS DE JULHO
   </div>
-  <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
   <div class="gastos-fixos">
-    <div class="gastos-container" >
-      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
+    <div class="gastos-container" ng-repeat="gastoFixo in gastosFixos">
+      <span>Gasto Fixo #{{gastosFixos.indexOf(gastoFixo) + 1}}</span>
       <div class="gasto-title">
-        <h4>Gasto 1</h4>
+        <h4>{{gastoFixo.nome}}</h4>
         <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="mostrarOpcoes(gastoFixo)">
       </div>
       <div class="opcoes" ng-show="gastoFixo.opcoes=='true'">
@@ -19,32 +18,13 @@
       </div>
       <div class="info">
         <div class="">
-          <span class="type">Valor:</span> <span> R$ 120,00</span>
+          <span class="type">Valor:</span> <span>R$ {{gastoFixo.valor}}</span>
         </div>
         <div class="">
-          <span class="type">Periodo:</span> <span> 3 meses</span>
+          <span class="type">Periodo:</span> <span>{{gastoFixo.duracaoMeses}}</span>
         </div>
         <div class="">
-          <span class="type">Categoria:</span> <span> Categoria 1</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="gastos-container" >
-      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
-      <div class="gasto-title">
-        <h4>Gasto 2</h4>
-        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
-      </div>
-      <div class="info">
-        <div class="">
-          <span class="type">Valor:</span> <span> R$ 50,00</span>
-        </div>
-        <div class="">
-          <span class="type">Periodo:</span> <span> 12 meses</span>
-        </div>
-        <div class="">
-          <span class="type">Categoria:</span> <span> Categoria 1</span>
+          <span class="type">Categoria:</span> <span>{{gastoFixo.categoria.nome}}</span>
         </div>
       </div>
     </div>

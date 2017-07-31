@@ -1,10 +1,22 @@
+// BACKGROUND
+.login-container > img{
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  min-width: 100%;
+}
+
 .loading {
   margin-top: 5em;
   text-align: center;
 }
 
-.login > .botao-container > .botao {
-  border: none;
-  background: none;
-  padding: 0;
+.botao-login {
+  position: relative;
+  display: flex;
+}
+
+.botao-login > img {
+  margin: 35px auto;
+  height: 75px;
 }

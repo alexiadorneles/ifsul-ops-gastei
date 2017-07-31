@@ -2,6 +2,7 @@ package com.ifdevs.opsgastei.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -21,6 +22,10 @@ public class Objetivo {
 
     @NotNull
     private Double valor;
+
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date data;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
@@ -76,5 +81,13 @@ public class Objetivo {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }

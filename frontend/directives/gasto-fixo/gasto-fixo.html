@@ -1,10 +1,8 @@
 <div class="conteudo">
-  <div class="title">
-    <!-- TODO: adicionar função na controller para pegar o nome do mês -->
-    <!-- GASTOS FIXOS DE {{mes.nome}} -->
+  <div class="title" ng-click="mostrarGastosFixos()">
     GASTOS FIXOS DE JULHO
   </div>
-  <div class="gastos-fixos">
+  <div class="gastos-fixos" ng-show="showGastos">
     <div class="gastos-container" ng-repeat="gastoFixo in gastosFixos">
       <span>Gasto Fixo #{{gastosFixos.indexOf(gastoFixo) + 1}}</span>
       <div class="gasto-title">

@@ -8,6 +8,10 @@ export default function GastoFixoController ($location, $scope, categoriaService
     gastoFixo.opcoes = !gastoFixo.opcoes;
   }
 
+  function mostrarGastosFixos() {
+    $scope.showGastos = !$scope.showGastos;
+  }
+
   function mostrarAdicionar() {
     $scope.showAdicionar = true;
   }
@@ -39,6 +43,7 @@ export default function GastoFixoController ($location, $scope, categoriaService
   function init() {
     $scope.mostrarOpcoes = mostrarOpcoes;
     $scope.mostrarAdicionar = mostrarAdicionar;
+    $scope.mostrarGastosFixos = mostrarGastosFixos;
     $scope.showAdicionar = false;
     $scope.adicionar = adicionar;
     $scope.categorias = {};

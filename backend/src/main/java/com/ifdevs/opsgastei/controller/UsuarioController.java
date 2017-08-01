@@ -27,7 +27,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario save(@RequestBody Usuario usuario) {
+    public int save(@RequestBody Usuario usuario) {
         return service.verificarUsuario(usuario);
     }
 

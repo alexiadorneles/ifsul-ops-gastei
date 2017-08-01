@@ -26,12 +26,13 @@ public class UsuarioService {
         return repository.findAll();
     }
 
-    public Usuario verificarUsuario(Usuario usuario) {
+    public int verificarUsuario(Usuario usuario) {
         Usuario autorizado = this.findUsuarioByEmail(usuario.getEmail());
         if (autorizado != null) {
-            return autorizado;
+            return 1;
         } else {
-            return this.save(usuario);
+            this.save(usuario);
+            return 0;
         }
     }
 

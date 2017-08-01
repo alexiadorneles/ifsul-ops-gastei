@@ -5,13 +5,13 @@
 }
 
 .navbar .app-navbar__menu-btn {
-    color: hsl(0, 0%, 0%);
+    color: hsl(255, 100%, 100%);
     background-color: hsl(165, 44%, 58%);
     border: none;
 
     &:hover, &:focus {
-        outline: hsla(0, 0%, 0%, 0.28) solid 1px;    
-        color: hsl(0, 0%, 0%);
+        outline: hsla(255, 100%, 100%, 0.28) solid 1px;
+        color: hsl(255, 100%, 100%);
     }
 
     span {
@@ -37,6 +37,7 @@
 }
 
 .app-navbar__list-content {
-    color: hsl(0, 0%, 0%);
-    margin: 0;
+  text-transform: uppercase;
+      color: white;
+      margin: 0;
 }

@@ -1,8 +1,8 @@
 package com.ifdevs.opsgastei.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -17,12 +17,13 @@ public class GastoFixo {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String nome;
 
     @NotNull
     private Double valor;
 
-    @NotNull
+    //@NotNull TODO deletar, se nao necessario mais pra frente
     private String recorrenciaPattern;
 
     @NotNull
@@ -37,6 +38,7 @@ public class GastoFixo {
     private Integer duracaoMeses;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
@@ -45,7 +47,8 @@ public class GastoFixo {
     private Categoria categoria;
 
     @OneToMany
-    @JoinColumn(name = "id_gasto_fixo_snapshot")
+    @JoinColumn(name = "id_gasto_fixo")
+    @JsonManagedReference
     private List<GastoFixoSnapshot> gastosFixosSnapshot;
 
     public Long getId() {

@@ -8,6 +8,7 @@ import 'sweetalert/dist/sweetalert.css'
 import './assets/css/style.css'
 import './directives/navbar/navbar.scss'
 import './directives/menu/menu.scss'
+import './directives/gasto-fixo/gasto-fixo.css'
 
 // import routing configs
 import routing from './app.route'
@@ -30,11 +31,13 @@ import home from './submodules/home'
 // import directives
 import navbar from './directives/navbar'
 import menu from './directives/menu'
+import gastoFixo from './directives/gasto-fixo'
 
-angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo, arquivado, simulacao,
-  categoria, cadastro, login, gasto_fixo, inicial, home])
+angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo,
+  arquivado, simulacao, cadastro, categoria, login, gasto_fixo, home])
   .directive('navbar', navbar)
   .directive('menu', menu)
+  .directive('gastoFixo', gastoFixo)
   .config(routing)
   .constant('authConfig', {
 

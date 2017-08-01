@@ -1,0 +1,32 @@
+<navbar></navbar>
+<div menu></div>
+<div class="conteudo wrapper">
+  <div class="title">CATEGORIAS
+  </div>
+  <div class="categoria">
+    <div class="categoria-container">
+      <span class="nome-categoria">Categoria 1</span>
+      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
+    </div>
+    <div class="categoria-container">
+      <span class="nome-categoria">Categoria 2</span>
+      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
+    </div>
+    <div class="categoria-container">
+      <span class="nome-categoria">Categoria 3</span>
+      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
+    </div>
+    <div class="adicionar-categoria" ng-show="addCategoria">
+      <h3>ADICIONAR CATEGORIA</h3>
+      <label> Nome:
+        <input class="inputs" type="text" name="nome-categoria" required>
+      </label>
+      <label>Cor:
+        <input type="color" name="cor-categoria" required>
+      </label>
+    </div>
+    <div class="botao-container">
+      <button class="botao" ng-click="adicionarCategoria()">Adicionar categoria</button>
+    </div>
+  </div>
+</div>

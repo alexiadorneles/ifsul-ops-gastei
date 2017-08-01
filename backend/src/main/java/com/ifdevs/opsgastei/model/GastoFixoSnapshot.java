@@ -1,8 +1,9 @@
 package com.ifdevs.opsgastei.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * Created by mhenrique on 7/29/17.
@@ -22,6 +23,7 @@ public class GastoFixoSnapshot {
 
     @ManyToOne
     @JoinColumn(name = "id_gasto_fixo")
+    @JsonBackReference
     private GastoFixo gastoFixo;
 
     public Long getId() {

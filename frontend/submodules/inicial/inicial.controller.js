@@ -3,21 +3,22 @@ export default function InicialController ($location, $scope, usuarioService,
     var usuarioGoogle = init();
 
     function criarUsuario(usuario) {
-      debugger;
       usuarioService
       .criar(usuarioGoogle)
-      .then(() => {
-        logarECriarSalario(usuarioGoogle, usuario.salario);
+      .then((res) => {
+        logarECriarSalario(usuarioGoogle, usuario.salario, 0);
       });
     }
 
 
-    function logarECriarSalario(usuario, valor) {
+    function logarECriarSalario(usuario, valor, autenticado) {
       authFactory.login(usuario)
       .then(
         // executa caso dê tudo certo com o login
         () => {
-          criarSalario(valor);
+          if (!autenticado) {
+            criarSalario(valor);
+          }
           mensagemLogin(usuario.nome, true);
           localStorage.setItem('nome', usuario.nome);
         },
@@ -54,6 +55,13 @@ export default function InicialController ($location, $scope, usuarioService,
         var usuarioAux = angular.copy($localStorage.usuarioGoogle);
         delete $localStorage.usuarioGoogle;
         $scope.criarUsuario = criarUsuario;
+        usuarioService
+        .criar(usuarioAux)
+        .then((res) => {
+          if (res.data) {
+            logarECriarSalario(usuarioAux, 0, res.data)
+          }
+        });
         return usuarioAux;
       }
 

@@ -1,6 +1,6 @@
 import swal from 'sweetalert'
 
-export default function ($location, $scope, authFactory, usuarioService, $localStorage) {
+export default function ($location, $scope, authFactory, usuarioService, $localStorage, $window) {
 
   $scope.auth = authFactory;
   $scope.loginGoogle = loginGoogle;
@@ -13,6 +13,8 @@ export default function ($location, $scope, authFactory, usuarioService, $localS
         localStorage.setItem("picture", response.w3.Paa);
         let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea, salario: 0 };
         $localStorage.usuarioGoogle = usuario;
+        // $location.path('/inicial')
+        $window.location.href = 'http://localhost:9000/inicial';
       }
     });
   };

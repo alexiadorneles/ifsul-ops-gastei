@@ -91,6 +91,25 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
     return deferred.promise;
   };
 
+  function isLoggedWithGoogle() {
+    return !!$localStorage.usuarioGoogle;
+  }
+
+  function isLoggedWithGooglePromise() {
+
+    let deferred = $q.defer();
+
+    if (isLoggedWithGoogle()) {
+      deferred.resolve();
+
+    } else {
+      $location.path(urlLogin);
+      deferred.reject();
+    }
+
+    return deferred.promise;
+  };
+
   function montarHeader(usuario) {
     let hash = window.btoa(`${usuario.email}:${usuario.senha}`);
     return {
@@ -103,6 +122,7 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
     logout: logout,
     getUsuario: getUsuario,
     isAuthenticated: isAuthenticated,
-    isAutenticadoPromise: isAutenticadoPromise
+    isAutenticadoPromise: isAutenticadoPromise,
+    isLoggedWithGooglePromise: isLoggedWithGooglePromise
   };
 }

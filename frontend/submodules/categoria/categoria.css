@@ -36,4 +36,6 @@
   margin-top: 5%;
   width: 80%;
   align-self: center;
+  display: flex;
+  flex-direction: column;
 }

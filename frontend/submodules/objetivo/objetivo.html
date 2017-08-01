@@ -30,7 +30,7 @@
             <li ng-click="arquivar()"><img class="arquivar" src="/assets/img/arquivo.svg">
               Arquivar
             </li>
-            <li ng-click="atualizarObjetivo(objetivo, 'C')"><img class="completar" src="/assets/img/check.svg">
+            <li ng-click="confirmar(objetivo)"><img class="completar" src="/assets/img/check.svg">
               Completar
             </li>
           </ul>
@@ -52,7 +52,7 @@
           <span>R$ {{objetivo.valor}}</span>
           <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir(objetivo)">
         </div>
-        <div class="objetivos-completos-total">
+        <div class="objetivos-completos-total" ng-show="possuiCompletos()">
           <span>Total:</span>
           <span id="total">R$ {{somarValorCompletos()}}</span>
         </div>

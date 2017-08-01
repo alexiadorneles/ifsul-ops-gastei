@@ -89,3 +89,13 @@ body {
 .botao-container > .botao:focus {
   outline: none;
 }
+
+gasto-fixo {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 70%;
+  float: left;
+}

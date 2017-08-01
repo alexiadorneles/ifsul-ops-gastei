@@ -1,8 +1,8 @@
 package com.ifdevs.opsgastei.model;
 
+import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 /**
  * Created by mhenrique on 6/30/17.
@@ -18,7 +18,7 @@ public class Objetivo {
     private String nome;
 
     @NotNull
-    private Boolean status;
+    private char status;
 
     @NotNull
     private Double valor;
@@ -51,11 +51,11 @@ public class Objetivo {
         this.nome = nome;
     }
 
-    public Boolean getStatus() {
+    public char getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(char status) {
         this.status = status;
     }
 

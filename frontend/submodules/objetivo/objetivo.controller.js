@@ -15,7 +15,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.showGastos = !$scope.showGastos;
   }
 
-  function completar(){
+  function completar(objetivo){
     swal({
       title: "Tem certeza?",
       text: "Desejas completar o objetivo?",
@@ -27,8 +27,9 @@ export default function ObjetivoController ($location, $scope, categoriaService,
       closeOnConfirm: false,
       closeOnCancel: false
     },
-    function(isConfirm){
+    function(isConfirm, objetivo){
       if (isConfirm) {
+        atualizarObjetivo(objetivo, 'C');
         swal("Completado!", "O objetivo foi completado.", "success");
       } else {
         swal("Cancelado", "Operação cancelada.", "error");
@@ -107,11 +108,18 @@ export default function ObjetivoController ($location, $scope, categoriaService,
   }
 
   function somarValorCompletos() {
-    if (!!$scope.objetivosCompletos) {
+    if (possuiCompletos()) {
+      console.log($scope.objetivosCompletos);
+      console.log(angular.isDefined($scope.objetivosCompletos));
       return $scope.objetivosCompletos
       .map(objetivo => objetivo.valor)
       .reduce((acumulativo, novoValor) => acumulativo + novoValor);
     }
+  }
+
+  function possuiCompletos() {
+    return angular.isDefined($scope.objetivosCompletos)
+          && $scope.objetivosCompletos.length > 0;
   }
 
   function init() {
@@ -126,6 +134,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.exibirGastos = exibirGastos;
     $scope.atualizarObjetivo = atualizarObjetivo;
     $scope.somarValorCompletos = somarValorCompletos;
+    $scope.possuiCompletos = possuiCompletos;
 
     categoriaService.buscarTodos().then( response => {
       $scope.categorias = response.data;

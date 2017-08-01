@@ -19,6 +19,7 @@ h3{
 
 /* Objetivo */
 .objetivo {
+  width: 100%;
   margin: 0 auto;
   padding-top: 10px;
   display: flex;

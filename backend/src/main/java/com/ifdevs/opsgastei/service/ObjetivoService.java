@@ -31,4 +31,12 @@ public class ObjetivoService {
         return repository.save(objetivo);
     }
 
+    public void remove(Objetivo objetivo) {
+        repository.delete(objetivo);
+    }
+
+    public Objetivo loadById(Long id) {
+        return repository.findOne(id);
+    }
+
 }

@@ -34,7 +34,7 @@ import menu from './directives/menu'
 import gastoFixo from './directives/gasto-fixo'
 
 angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo,
-  arquivado, simulacao, cadastro, categoria, login, gasto_fixo, home])
+  arquivado, simulacao, cadastro, categoria, login, gasto_fixo, inicial, home])
   .directive('navbar', navbar)
   .directive('menu', menu)
   .directive('gastoFixo', gastoFixo)

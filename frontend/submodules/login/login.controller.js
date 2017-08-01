@@ -1,6 +1,6 @@
 import swal from 'sweetalert'
 
-export default function($location, $scope, authFactory, usuarioService){
+export default function ($location, $scope, authFactory, usuarioService, $localStorage) {
 
   $scope.auth = authFactory;
   $scope.loginGoogle = loginGoogle;
@@ -12,40 +12,11 @@ export default function($location, $scope, authFactory, usuarioService){
       if (response.Zi) {
         localStorage.setItem("picture", response.w3.Paa);
         let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea, salario: 0 };
-        criarUsuario(usuario);
+        $localStorage.usuarioGoogle = usuario;
       }
     });
   };
 
-  function criarUsuario(usuario) {
-    usuarioService
-    .criar(usuario)
-    .then(response => {
-      logar(usuario);
-    });
-  }
-
-  function logar(usuario) {
-    authFactory.login(usuario)
-    .then(
-      function (response) {
-        swal({
-          title: "Login realizado com sucesso!",
-          text: 'Bem vindo, '  + usuario.nome + '.',
-          timer: 2000,
-          showConfirmButton: false
-        });
-        localStorage.setItem('nome', usuario.nome);
-      },
-      function (response) {
-        swal({
-          title: "Erro ao logar!",
-          text: "Houve algum erro com o login, por favor tente novamente!",
-          type: "error",
-          confirmButtonText: "OK"
-        });
-      });
-    };
 
     function GoogleInit() {
       var auth2;

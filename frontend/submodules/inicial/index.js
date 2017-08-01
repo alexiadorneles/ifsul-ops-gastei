@@ -1,6 +1,6 @@
 import angular from 'angular'
 import ngRoute from 'angular-route'
-
+import './inicial.css'
 import InicialController from './inicial.controller'
 import salarioService from '../../services/salario.service'
 

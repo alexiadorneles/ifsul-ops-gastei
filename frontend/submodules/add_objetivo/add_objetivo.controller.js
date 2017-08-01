@@ -1,34 +1,33 @@
 import swal from 'sweetalert'
-export default function AdicionarObjetivoController ($location, $scope){
-$scope.exibirCategorias = exibirCategorias;
-$scope.adicionarCategoria = adicionarCategoria;
-$scope.objetivoAdicionado = objetivoAdicionado;
-$scope.exibirOpcoesCategoria = false;
-$scope.addCategoria = false;
+export default function AdicionarObjetivoController ($location, $scope, objetivoService, categoriaService){
 
-function exibirCategorias(){
-  if(!$scope.exbirOpcoesCategoria){
-      $scope.exbirOpcoesCategoria = true;
-  }else{
-      $scope.exbirOpcoesCategoria = false;
-    }
-  }
+  init();
 
-  function adicionarCategoria(){
-    if(!$scope.addCategoria){
-        $scope.addCategoria = true;
-    }else{
-        $scope.addCategoria = false;
-    }
-  }
-
-  function objetivoAdicionado(){
-    swal({
+  function objetivoAdicionado(nomeObjetivo){
+    return swal({
       title: "Objetivo Adicionado!",
-      text: "<span>(Nome do objetivo adicionado) adicionado com sucesso.</span>",
+      text: `'${nomeObjetivo}' adicionado com sucesso.`,
       type: "success",
       html: true
     });
+  }
+
+  function adicionar(objetivo) {
+    const data = new Date();
+    objetivo.status = 'I';
+    objetivo.data = data;
+    objetivoService.criar(objetivo).then( () => {
+      objetivoAdicionado(objetivo.nome);
+      $location.url('/objetivo');
+    })
+  }
+
+  function init() {
+    $scope.objetivoAdicionado = objetivoAdicionado;
+    $scope.adicionar = adicionar;
+
+    categoriaService.buscarTodos().then(res => $scope.categorias = res.data);
+
   }
 
 }

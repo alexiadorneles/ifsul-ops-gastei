@@ -23,6 +23,15 @@ export default function routing ($routeProvider, $locationProvider) {
           }
         }
     })
+    .when('/categorias', {
+        controller: 'CategoriaController',
+        templateUrl: '/submodules/categoria/categoria.html',
+        resolve: {
+          autenticado: function (authFactory) {
+            return authFactory.isAutenticadoPromise();
+          }
+        }
+    })
     .when('/objetivo', {
         controller: 'ObjetivoController',
         templateUrl: '/submodules/objetivo/objetivo.html',

@@ -1,0 +1,39 @@
+/*Categoria*/
+.conteudo > .categoria {
+  font-size: 20px;
+}
+
+.categoria{
+  width: 80%;
+  border: 2px solid #9f9f9f;
+  box-sizing: border-box;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.categoria-container {
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.categoria-container > .tag-categoria {
+  align-self: center;
+  top: middle;
+  width: 10%;
+  height: 10px;
+  background-color: pink;
+  box-shadow: 2px 2px 2px #828282;
+}
+
+.categoria > .botao-container > .botao {
+  font-size: 16px;
+  margin-bottom: 5%;
+}
+
+.adicionar-categoria {
+  margin-top: 5%;
+  width: 80%;
+  align-self: center;
+}

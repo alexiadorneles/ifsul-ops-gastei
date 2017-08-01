@@ -2,10 +2,11 @@
     <article class="userinfo">
         <img class="userinfo__picture" src="{{usuario.picture}}" alt="Picture">
         <h3 class="userinfo__name">{{usuario.nome}}</h3>
-        <p class="userinfo__money">Não informado</p>
+        <p class="userinfo__money">{{salario.valor}}</p>
     </article>
     <ul class="sidemenu__list">
         <li ng-class="verificarAtivo('/objetivo') ? 'sidemenu__item--active' : ''"><a href="/objetivo">Pagina Inicial</a></li>
+        <li ng-class="verificarAtivo('/objetivo') ? 'sidemenu__item--active' : ''"><a href="#" ng-click="editarSalario()">Editar Salário</a></li>
         <li ng-class="verificarAtivo('/anterior') ? 'sidemenu__item--active' : ''"><a href="/anterior">Meses Anteriores</a></li>
         <li ng-class="verificarAtivo('/proximo') ? 'sidemenu__item--active' : ''"><a href="/proximo">Próximos Meses</a></li>
         <li ng-class="verificarAtivo('/gasto-fixo') ? 'sidemenu__item--active' : ''"><a href="/gasto-fixo">Gastos Fixos</a></li>

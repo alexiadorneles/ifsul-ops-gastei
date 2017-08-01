@@ -14,10 +14,15 @@ export default function objetivoService ($http) {
       return $http.get(url);
     }
 
+    function deletar(id) {
+      return $http.delete(`${url}/${id}`)
+    }
+
     return ({
         criar: criar,
         atualizar: atualizar,
-        buscarTodos: buscarTodos
+        buscarTodos: buscarTodos,
+        deletar: deletar
     });
 
 };

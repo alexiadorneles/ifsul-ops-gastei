@@ -7,7 +7,9 @@ import com.ifdevs.opsgastei.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +33,12 @@ public class ObjetivoController {
     @GetMapping
     public Iterable<Objetivo> findAll() {
         return service.findAll();
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void remove(@PathVariable Long id) {
+        Objetivo objetivo = service.loadById(id);
+        service.remove(objetivo);
     }
 
     @PostMapping

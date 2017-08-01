@@ -57,7 +57,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     });
   }
 
-  function excluir(){
+  function excluir(objetivo){
     swal({
       title: "Tem certeza?",
       text: "Desejas excluir o objetivo?",
@@ -71,7 +71,10 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     },
     function(isConfirm){
       if (isConfirm) {
-        swal("Excluído!", "O objetivo foi excluído.", "success");
+        objetivoService.deletar(objetivo.id).then(() => {
+          buscarObjetivos()
+          swal("Excluído!", "O objetivo foi excluído.", "success");
+        })
       } else {
         swal("Cancelado", "Operação cancelada.", "error");
       }

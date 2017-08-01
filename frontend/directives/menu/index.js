@@ -18,11 +18,11 @@ export default function menu (authFactory){
                 };
             }
 
-            $scope.editarSalario = () => {
-              $scope.editarSalario = () => {
+            $scope.editarSaldo = () => {
+              $scope.editarSaldo = () => {
                 swal({
-                  title: "Editar Salário",
-                  text: "Digite seu novo salário (somente números): ",
+                  title: "Editar Saldo",
+                  text: "Digite seu novo saldo (somente números): ",
                   type: "input",
                   showCancelButton: true,
                   closeOnConfirm: false,
@@ -33,11 +33,11 @@ export default function menu (authFactory){
                   if (inputValue === false) return false;
 
                   if (inputValue === "") {
-                    swal.showInputError("Salário Inválido!");
+                    swal.showInputError("Saldo Inválido!");
                     return false
                   }
 
-                  swal("Salário alterado com sucesso!", "Novo salário: R$" + inputValue, "success");
+                  swal("Saldo alterado com sucesso!", "Novo Saldo: R$" + inputValue, "success");
                 });
               }
             }

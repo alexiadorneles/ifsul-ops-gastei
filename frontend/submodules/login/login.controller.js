@@ -11,7 +11,7 @@ export default function ($location, $scope, authFactory, usuarioService, $localS
     auth2.signIn().then(function (response) {
       if (response.Zi) {
         localStorage.setItem("picture", response.w3.Paa);
-        let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea, salario: 0 };
+        let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea };
         $localStorage.usuarioGoogle = usuario;
         // $location.path('/inicial')
         $window.location.href = 'http://localhost:9000/inicial';

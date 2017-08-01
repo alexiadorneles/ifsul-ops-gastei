@@ -4,8 +4,17 @@ export default function GastoFixoController ($location, $scope, categoriaService
 
   init();
 
+  function removerDropdown() {
+    $scope.showGastos = true;
+    $scope.mostrarGastosFixos = null;
+  }
+
   function mostrarOpcoes(gastoFixo) {
     gastoFixo.opcoes = !gastoFixo.opcoes;
+  }
+
+  function mostrarGastosFixos() {
+    $scope.showGastos = !$scope.showGastos;
   }
 
   function mostrarAdicionar() {
@@ -39,6 +48,8 @@ export default function GastoFixoController ($location, $scope, categoriaService
   function init() {
     $scope.mostrarOpcoes = mostrarOpcoes;
     $scope.mostrarAdicionar = mostrarAdicionar;
+    $scope.mostrarGastosFixos = mostrarGastosFixos;
+    $scope.removerDropdown = removerDropdown;
     $scope.showAdicionar = false;
     $scope.adicionar = adicionar;
     $scope.categorias = {};

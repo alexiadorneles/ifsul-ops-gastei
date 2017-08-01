@@ -63,58 +63,7 @@
                     </div>
                   </div>
 
-                  <!-- GASTO -->
-
-                  <div class="title wrapper" ng-click="exibirGastos()">
-                    <!-- TODO: adicionar função na controller para pegar o nome do mês -->
-                    <!-- GASTOS FIXOS DE {{mes.nome}} -->
-                    GASTOS FIXOS
-                  </div>
-                  <!-- <div class="gastos-fixos" ng-repeat="gastoFixo in gastosFixos">-->
-                  <div class="gastos-fixos" ng-show="showGastos">
-                    <div class="gastos-container" >
-                      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
-                      <div class="gasto-title">
-                        <h4>Gasto 1</h4>
-                        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="mostrarOpcoes(gastoFixo)">
-                      </div>
-                      <div class="opcoes" ng-show="gastoFixo.opcoes=='true'">
-                        <div>Editar</div>
-                        <div>Excluir</div>
-                      </div>
-                      <div class="info">
-                        <div class="">
-                          <span class="type">Valor:</span> <span> R$ 120,00</span>
-                        </div>
-                        <div class="">
-                          <span class="type">Periodo:</span> <span> 3 meses</span>
-                        </div>
-                        <div class="">
-                          <span class="type">Categoria:</span> <span> Categoria 1</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="gastos-container" >
-                      <!-- <span>Gasto {{gastosFixos.indexOf(gastoFixo)}}</span> -->
-                      <div class="gasto-title">
-                        <h4>Gasto 2</h4>
-                        <img class="deletar" src="/assets/img/setting.svg" title="alterar" ng-click="alterar()">
-                      </div>
-                      <div class="info">
-                        <div class="">
-                          <span class="type">Valor:</span> <span> R$ 50,00</span>
-                        </div>
-                        <div class="">
-                          <span class="type">Periodo:</span> <span> 12 meses</span>
-                        </div>
-                        <div class="">
-                          <span class="type">Categoria:</span> <span> Categoria 1</span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
+                  <gasto-fixo></gasto-fixo>
 
                   <!-- COMPLETOS-->
                     <div class="objetivo wrapper">

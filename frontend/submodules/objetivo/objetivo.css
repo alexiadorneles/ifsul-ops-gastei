@@ -1,4 +1,4 @@
-.saldo_atual {
+.saldo {
   width:100%;
   height:200px;
   display: flex;
@@ -7,6 +7,9 @@
   background-color: #56c90a;
   color: white;
   margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  word-break: break-all;
 }
 
 h3{

@@ -18,7 +18,6 @@ import anterior from './submodules/anterior'
 import proximo from './submodules/proximo'
 import objetivo from './submodules/objetivo'
 import add_objetivo from './submodules/add_objetivo'
-import arquivado from './submodules/arquivado'
 import simulacao from './submodules/simulacao'
 import cadastro from './submodules/cadastro'
 import login from './submodules/login'
@@ -34,7 +33,7 @@ import menu from './directives/menu'
 import gastoFixo from './directives/gasto-fixo'
 
 angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo,
-  arquivado, simulacao, cadastro, categoria, login, gasto_fixo, inicial, home])
+  simulacao, cadastro, categoria, login, gasto_fixo, inicial, home])
   .directive('navbar', navbar)
   .directive('menu', menu)
   .directive('gastoFixo', gastoFixo)

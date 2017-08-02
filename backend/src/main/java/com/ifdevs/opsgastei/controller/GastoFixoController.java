@@ -5,14 +5,11 @@ import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.GastoFixoService;
 import com.ifdevs.opsgastei.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -40,9 +37,19 @@ public class GastoFixoController {
         return service.save(gastoFixo);
     }
 
+    /*
+    * Para encerrar um gasto fixo deve-se:
+    * - enviar gasto fixo;
+    * - a data de encerramento sera a data final do gasto fixo, que causa
+    *   na data final se tornar a data anterior ao mes de encerramento.
+    *
+    */
     @PutMapping
-    public GastoFixo update(@RequestBody GastoFixo gastoFixo) {
-        return service.update(gastoFixo);
+    public GastoFixo update(@RequestBody GastoFixo gastoFixo, Principal principal) {
+        Usuario logado = usuarioService.findUsuarioByEmail(principal.getName());
+        gastoFixo.setUsuario(logado);
+
+        return service.encerrar(gastoFixo, gastoFixo.getFimData());
     }
 
 }

@@ -5,11 +5,10 @@ export default function InicialController ($location, $scope, usuarioService,
 
     function criarSalario(valor) {
       $scope.salario = {valor: valor, data: new Date()};
-      logarUsuario(pegarUsuarioGoogle(), chamarSalarioService, chamarSalarioService);
+      logarUsuario(pegarUsuarioGoogle(), chamarSalarioService, authFactory.logout);
     }
 
     function chamarSalarioService(sucesso) {
-      debugger;
       salarioService
       .criar($scope.salario)
       .then(() => {
@@ -19,16 +18,16 @@ export default function InicialController ($location, $scope, usuarioService,
     }
 
     function logarUsuario (usuario, funcaoSucesso, funcaoErro) {
-      authFactory.login(usuario)
-      .then(funcaoSucesso(true))
-      .then(funcaoErro(false));
+      authFactory.logarUsuario(usuario)
+      .then((response) => authFactory.loginSucesso(response))
+      .then(() => funcaoSucesso(true), () => funcaoErro(false));
     }
 
     function mensagemLogin(sucesso) {
       if (sucesso) {
         return swal({
           title: "Login realizado com sucesso!",
-          text: 'Bem vindo, '  + $localStorage.nome + '.',
+          text: 'Bem vindo.',
           timer: 2000,
           showConfirmButton: false
         });

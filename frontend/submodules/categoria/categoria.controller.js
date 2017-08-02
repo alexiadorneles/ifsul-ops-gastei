@@ -13,7 +13,8 @@ export default function CategoriaController ($location, $scope, categoriaService
         // preto, se nao selecionado
         $scope.categoria.cor = $scope.categoria.cor || "#000000";
 
-        categoriaService.criar($scope.categoria).then( () => {
+        categoriaService.criar($scope.categoria).then( response => {
+            $scope.categorias.push(response.data);
             swal("Sucesso!", "Categoria adicionada.", "success");
         }).then( () => {
             // TODO usar error handler

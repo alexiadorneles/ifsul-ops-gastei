@@ -26,7 +26,7 @@ export default function AdicionarObjetivoController ($location, $scope, objetivo
     $scope.objetivoAdicionado = objetivoAdicionado;
     $scope.adicionar = adicionar;
 
-    categoriaService.buscarTodos().then(res => $scope.categorias = res.data);
+    categoriaService.buscarPorUsuario().then(res => $scope.categorias = res.data);
 
   }
 

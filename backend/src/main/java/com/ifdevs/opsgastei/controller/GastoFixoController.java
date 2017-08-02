@@ -4,6 +4,8 @@ import com.ifdevs.opsgastei.model.GastoFixo;
 import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.GastoFixoService;
 import com.ifdevs.opsgastei.service.UsuarioService;
+import java.security.Principal;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.security.Principal;
 
 /**
  *
@@ -43,6 +43,12 @@ public class GastoFixoController {
     @PutMapping
     public GastoFixo update(@RequestBody GastoFixo gastoFixo) {
         return service.update(gastoFixo);
+    }
+
+    @GetMapping(value = "/usuario")
+    public List<GastoFixo> findByUsuario(Principal principal) {
+        Usuario logado = usuarioService.findUsuarioByEmail(principal.getName());
+        return service.findByUsuario(logado);
     }
 
 }

@@ -18,11 +18,11 @@ export default function menu (authFactory){
                 };
             }
 
-            $scope.editarSaldo = () => {
-              $scope.editarSaldo = () => {
+            $scope.editarReceita = () => {
+              $scope.editarReceita = () => {
                 swal({
-                  title: "Editar Saldo",
-                  text: "Digite seu novo saldo (somente números): ",
+                  title: "Editar Receita",
+                  text: "Digite sua nova receita (somente números): ",
                   type: "input",
                   showCancelButton: true,
                   closeOnConfirm: false,
@@ -33,11 +33,11 @@ export default function menu (authFactory){
                   if (inputValue === false) return false;
 
                   if (inputValue === "") {
-                    swal.showInputError("Saldo Inválido!");
+                    swal.showInputError("Receita Inválida!");
                     return false
                   }
 
-                  swal("Saldo alterado com sucesso!", "Novo saldo: R$" + inputValue, "success");
+                  swal("Receita alterada com sucesso!", "Nova receita: R$" + inputValue, "success");
                 });
               }
             }

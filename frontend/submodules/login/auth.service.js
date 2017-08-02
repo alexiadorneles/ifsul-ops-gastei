@@ -7,49 +7,26 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
   let urlPrivado = authConfig.urlPrivado;
   let urlLogout = authConfig.urlLogout;
 
-
-  // LOGIN - Retorna PROMISE com o response (sucesso ou erro)
-  function login(usuario) {
-    let deferred = $q.defer();
-
-    let headerAuth = montarHeader(usuario);
-
-    $http({
+  function logarUsuario(usuario) {
+    $localStorage.headerAuth = montarHeader(usuario)['Authorization'];
+    $http.defaults.headers.common.Authorization = $localStorage.headerAuth;
+    return $http({
       url: urlUsuario,
       method: 'GET',
-      headers: headerAuth
-    }).then(
-
-      // Sucesso - HTTP 200
-      function (response) {
-
-        // Adiciona usuário e header ao localstorage
-        $localStorage.usuarioLogado = response.data;
-        $localStorage.headerAuth = montarHeader(usuario)['Authorization'];
-
-        // Adiciona header de autenticação em todos os próximos requests
-        $http.defaults.headers.common.Authorization = $localStorage.headerAuth;
-
-        // Redireciona se tiver uma url configurada
-        if (urlPrivado) {
-          $location.path(urlPrivado);
-        }
-
-        // resolve promise com sucesso
-        deferred.resolve(response);
-      },
-
-      // Erro
-      function (response) {
-        // resolve promise com erro
-        deferred.reject(response);
-      });
-
-    // Retorna promise, sem resolver
-    return deferred.promise;
+      headers: montarHeader(usuario)
+    })
   };
 
-
+  function loginSucesso (response) {
+    let deferred = $q.defer();
+    debugger;
+    $localStorage.usuarioLogado = response.data;
+    if (urlPrivado) {
+      $location.path(urlPrivado);
+    }
+    deferred.resolve(response);
+    return deferred.promise;
+  };
 
   // LOGOUT (sem retorno)
   function logout() {
@@ -118,7 +95,8 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
   };
 
   return {
-    login: login,
+    logarUsuario: logarUsuario,
+    loginSucesso: loginSucesso,
     logout: logout,
     getUsuario: getUsuario,
     isAuthenticated: isAuthenticated,

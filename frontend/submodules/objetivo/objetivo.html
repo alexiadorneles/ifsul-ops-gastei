@@ -17,7 +17,10 @@
       <div class="objetivos-incompletos-container" ng-repeat="objetivo in objetivosIncompletos">
         <span>{{objetivo.nome}}</span>
         <span>R$ {{objetivo.valor}}</span>
-        <span>{{objetivo.categoria.nome}}</span>
+        <div class="info-categoria">
+          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
+          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        </div>
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
             Incompleto
@@ -68,6 +71,10 @@
       <div class="objetivos-completos-container" ng-repeat="objetivo in objetivosCompletos">
         <span>{{objetivo.nome}}</span>
         <span>R$ {{objetivo.valor}}</span>
+        <div class="info-categoria">
+          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
+          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        </div>
         <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir(objetivo)">
       </div>
       <div class="objetivos-completos-total" ng-show="possuiCompletos()">

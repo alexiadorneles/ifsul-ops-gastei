@@ -26,13 +26,12 @@ public class UsuarioService {
         return repository.findAll();
     }
 
-    public int verificarUsuario(Usuario usuario) {
-        Usuario autorizado = this.findUsuarioByEmail(usuario.getEmail());
-        if (autorizado != null) {
-            return 1;
+    public Usuario verificarUsuario(Usuario usuario) {
+        Usuario existeNoBanco = this.findUsuarioByEmail(usuario.getEmail());
+        if (existeNoBanco != null) {
+            return existeNoBanco;
         } else {
-            this.save(usuario);
-            return 0;
+            return this.save(usuario);
         }
     }
 
@@ -43,6 +42,10 @@ public class UsuarioService {
     private Usuario save(Usuario usuario) {
         usuario.criptografarSenha();
         return repository.save(usuario);
+    }
+
+    public Usuario findById(Long idUsuario) {
+        return repository.findOne(idUsuario);
     }
 
 }

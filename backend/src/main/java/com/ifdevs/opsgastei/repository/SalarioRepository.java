@@ -11,4 +11,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface SalarioRepository extends CrudRepository<Salario, Long> {
 
     public List<Salario> findByUsuario(Usuario usuario);
+
+    public int countByUsuario(Usuario usuario);
+
 }

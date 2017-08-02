@@ -36,4 +36,8 @@ public class SalarioService {
         return repository.findByUsuario(usuario);
     }
 
+    public int countByUsuario(Usuario usuario) {
+        return repository.countByUsuario(usuario);
+    }
+
 }

@@ -5,6 +5,7 @@ import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.GastoFixoService;
 import com.ifdevs.opsgastei.service.UsuarioService;
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,14 @@ public class GastoFixoController {
     public Iterable<GastoFixo> findAll() {
         return service.findAll();
     }
+    
+    @GetMapping("/findByUsuarioAndFimDataBefore")
+    public Iterable<GastoFixo> findByUsuarioAndFimDataBefore(Principal principal) {
 
+        Usuario logado = usuarioService.findUsuarioByEmail(principal.getName());
+        return service.findByUsuarioAndFimDataBefore(logado, new Date());
+    }
+    
     @PostMapping
     public GastoFixo save(@RequestBody GastoFixo gastoFixo, Principal principal) {
         Usuario logado = usuarioService.findUsuarioByEmail(principal.getName());

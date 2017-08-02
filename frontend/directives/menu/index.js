@@ -23,6 +23,7 @@ export default function menu (authFactory){
                         title: "Editar Receita",
                         text: "Digite sua nova receita (somente números): ",
                         type: "input",
+                        inputType:	"number",
                         showCancelButton: true,
                         closeOnConfirm: false,
                         animation: "slide-from-top",

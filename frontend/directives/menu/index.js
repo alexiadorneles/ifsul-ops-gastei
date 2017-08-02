@@ -3,7 +3,7 @@ export default function menu (authFactory){
     return {
         restrict: 'A',
         templateUrl: './directives/menu/menu.html',
-        controller: ($scope, $location) => {
+        controller: ($scope, $location, $localStorage) => {
             init();
 
             $scope.showMenu = () => {
@@ -11,6 +11,7 @@ export default function menu (authFactory){
             };
 
             function init() {
+              $scope.salario = $localStorage.salario;
                 $scope.logout = authFactory.logout;
                 $scope.usuario = {
                     nome: localStorage.getItem("nome"),

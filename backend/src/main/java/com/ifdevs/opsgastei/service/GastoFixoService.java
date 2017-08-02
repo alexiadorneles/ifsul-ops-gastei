@@ -48,6 +48,9 @@ public class GastoFixoService {
         calendar.set(Calendar.DAY_OF_MONTH, 1); // para melhor consistencia da datas
 
         gastoFixo.setFimData(calendar.getTime());
+        
+        return gastoFixo;
+        
     }
 
 }

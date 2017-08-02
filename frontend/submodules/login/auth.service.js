@@ -19,7 +19,6 @@ export default function authFactory(authConfig, $http, $q, $location, $localStor
 
   function loginSucesso (response) {
     let deferred = $q.defer();
-    debugger;
     $localStorage.usuarioLogado = response.data;
     if (urlPrivado) {
       $location.path(urlPrivado);

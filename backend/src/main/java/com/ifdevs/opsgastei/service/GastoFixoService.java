@@ -36,9 +36,13 @@ public class GastoFixoService {
         return repository.save(gastoFixo);
     }
 
-    public GastoFixo encerrar(GastoFixo enviado, Date encerramento){
+    public List<GastoFixo> findByUsuario(Usuario usuario) {
+        return repository.findByUsuario(usuario); 
+    }
+
+    public GastoFixo encerrar(GastoFixo enviado, Date encerramento) {
         GastoFixo gastoFixo = repository.findOne(enviado.getId());
-        if (gastoFixo == null){
+        if (gastoFixo == null) {
             throw new RuntimeException("GastoFixo não encontrado"); // até exception padrao
         }
 

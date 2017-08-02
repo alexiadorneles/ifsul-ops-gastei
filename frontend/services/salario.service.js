@@ -6,8 +6,13 @@ export default function salarioService ($http) {
       return $http.post(url, salario);
     }
 
+    function buscarPorUsuario() {
+      return $http.get(`${url}/usuario`);
+    }
+
     return ({
-        criar: criar
+        criar: criar,
+        buscarPorUsuario: buscarPorUsuario
     });
 
 };

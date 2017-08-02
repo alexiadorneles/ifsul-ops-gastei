@@ -113,7 +113,8 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     if (possuiCompletos()) {
       return $scope.objetivosCompletos
       .map(objetivo => objetivo.valor)
-      .reduce((acumulativo, novoValor) => acumulativo + novoValor);
+      .reduce((acumulativo, novoValor) => acumulativo + novoValor)
+      .toFixed(2);
     }
   }
 

@@ -30,12 +30,12 @@ export default function GastoFixoController ($location, $scope, categoriaService
     fimData.setMonth(inicioData.getMonth()+duracaoMeses);
 
     const gastoFixo = {
-        nome: $scope.gastoFixo.nome,
-        valor: $scope.gastoFixo.valor,
-        categoria: $scope.gastoFixo.selectedCategoria,
-        inicioData,
-        fimData, // TODO permitir enviar undefined, para casos indeterminados
-        duracaoMeses,
+      nome: $scope.gastoFixo.nome,
+      valor: $scope.gastoFixo.valor,
+      categoria: $scope.gastoFixo.selectedCategoria,
+      inicioData,
+      fimData, // TODO permitir enviar undefined, para casos indeterminados
+      duracaoMeses,
     };
 
     gastoFixoService.criar(gastoFixo).then( () => {
@@ -43,6 +43,35 @@ export default function GastoFixoController ($location, $scope, categoriaService
       $scope.showAdicionar = false;
       $scope.gastoFixo = {};
     })
+  }
+  function excluirGasto(gastoFixo){
+    swal({
+      title: "Tem certeza?",
+      text: "Desejas excluir este gasto fixo?",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "Excluir",
+      cancelButtonText: "Cancelar",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+    function(isConfirm){
+      if (isConfirm) {
+        gastoFixo.fimData = new Date();
+        gastoFixoService.deletar(gastoFixo).then(() => {
+          buscarPorUsuario()
+          swal("Excluído!", "O gasto fixo foi excluído.", "success");
+        })
+      } else {
+        swal("Cancelado", "Operação cancelada.", "error");
+      }
+    });
+  }
+  function buscarPorUsuario(){
+    gastoFixoService.buscarPorUsuario().then( response => {
+      $scope.gastosFixos = response.data;
+    });
   }
 
   function init() {
@@ -53,13 +82,11 @@ export default function GastoFixoController ($location, $scope, categoriaService
     $scope.showAdicionar = false;
     $scope.adicionar = adicionar;
     $scope.categorias = {};
+    $scope.excluirGasto = excluirGasto;
 
     categoriaService.buscarPorUsuario().then( response => {
       $scope.categorias = response.data;
     });
-
-    gastoFixoService.buscarPorUsuario().then( response => {
-      $scope.gastosFixos = response.data;
-    });
+    buscarPorUsuario();
   }
 }

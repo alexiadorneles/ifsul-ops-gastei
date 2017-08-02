@@ -6,6 +6,7 @@ export default function InicialController ($location, $scope, usuarioService,
     function criarSalario(valor) {
       $scope.salario = {valor: valor, data: new Date()};
       logarUsuario(pegarUsuarioGoogle(), chamarSalarioService, authFactory.logout);
+      $localStorage.salario = $scope.salario;
     }
 
     function chamarSalarioService(sucesso) {

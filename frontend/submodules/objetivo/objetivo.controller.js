@@ -39,27 +39,6 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     });
   }
 
-  function arquivar(){
-    swal({
-      title: "Tem certeza?",
-      text: "Desejas arquivar o objetivo?",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Arquivar",
-      cancelButtonText: "Cancelar",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-    function(isConfirm){
-      if (isConfirm) {
-        swal("Arquivado!", "O objetivo foi arquivado.", "success");
-      } else {
-        swal("Cancelado!", "Operação cancelada.", "error");
-      }
-    });
-  }
-
   function excluir(objetivo){
     swal({
       title: "Tem certeza?",
@@ -90,10 +69,6 @@ export default function ObjetivoController ($location, $scope, categoriaService,
 
   function simularCompra(){
     $location.path('/objetivo/simulacao');
-  }
-
-  function objetivosArquivados(){
-    $location.path('/objetivo/arquivados');
   }
 
   function atualizarObjetivo(objetivo, status) {
@@ -127,11 +102,9 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.exibirObjetivosCompletos = exibirObjetivosCompletos;
     $scope.exibirObjetivosIncompletos = exibirObjetivosIncompletos;
     $scope.completar = completar;
-    $scope.arquivar = arquivar;
     $scope.excluir = excluir;
     $scope.adicionarObjetivo = adicionarObjetivo;
     $scope.simularCompra = simularCompra;
-    $scope.objetivosArquivados = objetivosArquivados;
     $scope.exibirGastos = exibirGastos;
     $scope.atualizarObjetivo = atualizarObjetivo;
     $scope.somarValorCompletos = somarValorCompletos;

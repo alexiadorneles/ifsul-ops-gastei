@@ -80,7 +80,6 @@ h3{
   margin: 10px 10px 10px 10px;
 }
 
-.dropdown-menu > li > .arquivar,
 .dropdown-menu > li > .completar,
 .dropdown-menu > li > .deletar {
   width: 15%;
@@ -135,10 +134,6 @@ h3{
   color: #56C90A;
 }
 
-.arquivado > .botao-container > .botao > .arquivar {
-  width: 8%;
-  margin-bottom: 5px;
-}
 .wrapper{
 padding: 20px 0;
 

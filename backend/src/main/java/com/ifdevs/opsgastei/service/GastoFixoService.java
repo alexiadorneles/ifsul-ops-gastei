@@ -58,6 +58,10 @@ public class GastoFixoService {
         return gastoFixo;
         
     }
+
+    public List<GastoFixo> findByUsuarioAndFimDataBefore(Usuario usuario, Date data){
+        return repository.findByUsuarioAndFimDataBefore(usuario, data);
+    }
     
     /*
       * Metodo para retornar primeiro dia do mes de certa data

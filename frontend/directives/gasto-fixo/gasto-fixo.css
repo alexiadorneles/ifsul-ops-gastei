@@ -80,3 +80,11 @@
 .margin-bottom {
   margin-bottom: 15px;
 }
+
+.info-categoria {
+  display: flex;
+}
+
+.info-categoria > .info-categoria-nome {
+  margin-right: 5%;
+}

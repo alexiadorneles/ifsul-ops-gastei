@@ -18,12 +18,11 @@
   margin-top: 5px;
 }
 
-.categoria-container > .tag-categoria {
+.tag-categoria {
   align-self: center;
   top: middle;
   width: 10%;
   height: 10px;
-  background-color: pink;
   box-shadow: 2px 2px 2px #828282;
 }
 

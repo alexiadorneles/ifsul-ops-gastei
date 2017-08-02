@@ -4,13 +4,12 @@ import com.ifdevs.opsgastei.model.GastoFixo;
 import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.GastoFixoService;
 import com.ifdevs.opsgastei.service.UsuarioService;
+import java.security.Principal;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.Calendar;
-import java.util.Date;
-
 /**
  *
  * @author alexia.pereira on 07/28/17
@@ -50,6 +49,12 @@ public class GastoFixoController {
         gastoFixo.setUsuario(logado);
 
         return service.encerrar(gastoFixo, gastoFixo.getFimData());
+    }
+
+    @GetMapping(value = "/usuario")
+    public List<GastoFixo> findByUsuario(Principal principal) {
+        Usuario logado = usuarioService.findUsuarioByEmail(principal.getName());
+        return service.findByUsuario(logado);
     }
 
 }

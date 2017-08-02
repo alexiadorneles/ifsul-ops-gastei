@@ -102,7 +102,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
   }
 
   function buscarObjetivos() {
-    objetivoService.buscarTodos().then( response => {
+    objetivoService.buscarPorUsuario().then( response => {
       let objetivos = response.data;
       $scope.objetivosCompletos = objetivos.filter(objetivo => objetivo.status === 'C');
       $scope.objetivosIncompletos = objetivos.filter(objetivo => objetivo.status === 'I');
@@ -137,7 +137,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.possuiCompletos = possuiCompletos;
     $scope.showObjetivosIncompletos = true;
 
-    categoriaService.buscarTodos().then( response => {
+    categoriaService.buscarPorUsuario().then( response => {
       $scope.categorias = response.data;
     });
 

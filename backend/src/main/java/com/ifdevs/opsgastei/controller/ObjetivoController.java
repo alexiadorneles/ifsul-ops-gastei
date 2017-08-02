@@ -4,6 +4,7 @@ import com.ifdevs.opsgastei.model.Objetivo;
 import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.ObjetivoService;
 import com.ifdevs.opsgastei.service.UsuarioService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -51,6 +52,12 @@ public class ObjetivoController {
     @PutMapping
     public Objetivo update(@RequestBody Objetivo objetivo) {
         return service.update(objetivo);
+    }
+
+    @GetMapping(value = "/usuario")
+    public List<Objetivo> findByUsuario(@AuthenticationPrincipal User user) {
+        Usuario usuario = usuarioService.findUsuarioByEmail(user.getUsername());
+        return service.findByUsuario(usuario);
     }
 
 }

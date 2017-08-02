@@ -1,7 +1,9 @@
 package com.ifdevs.opsgastei.service;
 
 import com.ifdevs.opsgastei.model.GastoFixo;
+import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.repository.GastoFixoRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +48,6 @@ public class GastoFixoService {
         calendar.set(Calendar.DAY_OF_MONTH, 1); // para melhor consistencia da datas
 
         gastoFixo.setFimData(calendar.getTime());
-        return repository.save(gastoFixo);
     }
 
 }

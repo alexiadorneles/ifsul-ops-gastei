@@ -50,15 +50,6 @@ export default function routing ($routeProvider, $locationProvider) {
           }
         }
     })
-    .when('/objetivo/arquivados', {
-        controller: 'ArquivadoController',
-        templateUrl: '/submodules/arquivado/arquivado.html',
-        resolve: {
-          autenticado: function (authFactory) {
-            return authFactory.isAutenticadoPromise();
-          }
-        }
-    })
     .when('/objetivo/simulacao', {
         controller: 'SimulacaoController',
         templateUrl: '/submodules/simulacao/simulacao.html',
@@ -87,15 +78,6 @@ export default function routing ($routeProvider, $locationProvider) {
     .when('/home', {
         controller: 'HomeController',
         templateUrl: '/submodules/home/home.html'
-    })
-    .when('/editar-perfil', {
-      controller: 'EditarPerfilController',
-      templateUrl: '/submodules/editar_perfil/editar-perfil.html',
-      resolve: {
-        autenticado: function (authFactory) {
-          return authFactory.isAutenticadoPromise();
-        }
-      }
     })
     .when('/inicial', {
       controller: 'InicialController',

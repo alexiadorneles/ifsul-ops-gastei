@@ -36,9 +36,13 @@ public class GastoFixoService {
         return repository.save(gastoFixo);
     }
 
-    public GastoFixo encerrar(GastoFixo enviado, Date encerramento){
+    public List<GastoFixo> findByUsuario(Usuario usuario) {
+        return repository.findByUsuario(usuario); 
+    }
+
+    public GastoFixo encerrar(GastoFixo enviado, Date encerramento) {
         GastoFixo gastoFixo = repository.findOne(enviado.getId());
-        if (gastoFixo == null){
+        if (gastoFixo == null) {
             throw new RuntimeException("GastoFixo não encontrado"); // até exception padrao
         }
 
@@ -48,6 +52,9 @@ public class GastoFixoService {
         calendar.set(Calendar.DAY_OF_MONTH, 1); // para melhor consistencia da datas
 
         gastoFixo.setFimData(calendar.getTime());
+        
+        return gastoFixo;
+        
     }
 
 }

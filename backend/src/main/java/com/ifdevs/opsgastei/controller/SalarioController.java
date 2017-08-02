@@ -44,6 +44,12 @@ public class SalarioController {
         return service.findByUsuario(this.buscarUsuario(user.getUsername()));
     }
 
+    @GetMapping(value = "/count/{idUsuario}")
+    public int countByUsuario(@PathVariable Long idUsuario) {
+        Usuario usuario = usuarioService.findById(idUsuario);
+        return service.countByUsuario(usuario);
+    }
+
     private Usuario buscarUsuario(String username) {
         return usuarioService.findUsuarioByEmail(username);
     }

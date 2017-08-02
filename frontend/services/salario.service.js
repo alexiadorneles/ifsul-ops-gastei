@@ -10,9 +10,14 @@ export default function salarioService ($http) {
       return $http.get(`${url}/usuario`);
     }
 
+    function quantidadePorUsuario (idUsuario) {
+      return $http.get(`${url}/count/${idUsuario}`);
+    }
+
     return ({
         criar: criar,
-        buscarPorUsuario: buscarPorUsuario
+        buscarPorUsuario: buscarPorUsuario,
+        quantidadePorUsuario: quantidadePorUsuario
     });
 
 };

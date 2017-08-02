@@ -18,28 +18,26 @@ export default function menu (authFactory){
                 };
             }
 
-            $scope.editarSalario = () => {
-              $scope.editarSalario = () => {
+            $scope.editarReceita = () => {
                 swal({
-                  title: "Editar Salário",
-                  text: "Digite seu novo salário (somente números): ",
-                  type: "input",
-                  showCancelButton: true,
-                  closeOnConfirm: false,
-                  animation: "slide-from-top",
-                  inputPlaceholder: "R$ 500,00"
-                },
-                function(inputValue){
-                  if (inputValue === false) return false;
+                        title: "Editar Receita",
+                        text: "Digite sua nova receita (somente números): ",
+                        type: "input",
+                        showCancelButton: true,
+                        closeOnConfirm: false,
+                        animation: "slide-from-top",
+                        inputPlaceholder: "R$ 500,00"
+                    },
+                    function(inputValue){
+                        if (inputValue === false) return false;
 
-                  if (inputValue === "") {
-                    swal.showInputError("Salário Inválido!");
-                    return false
-                  }
+                        if (inputValue === "") {
+                            swal.showInputError("Receita Inválida!");
+                            return false
+                        }
 
-                  swal("Salário alterado com sucesso!", "Novo salário: R$" + inputValue, "success");
-                });
-              }
+                        swal("Receita alterada com sucesso!", "Nova receita: R$" + inputValue, "success");
+                    });
             }
 
             $scope.verificarAtivo = function(urlEsperado){

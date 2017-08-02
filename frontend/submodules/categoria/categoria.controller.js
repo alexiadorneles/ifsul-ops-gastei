@@ -26,7 +26,7 @@ export default function CategoriaController ($location, $scope, categoriaService
       $scope.adicionarCategoria = adicionarCategoria;
       $scope.addCategoria = false;
 
-      categoriaService.buscarTodos().then( response => {
+      categoriaService.buscarPorUsuario().then( response => {
           $scope.categorias = response.data
       }).then( () => {
           // TODO usar error handler

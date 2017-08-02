@@ -54,11 +54,11 @@ export default function GastoFixoController ($location, $scope, categoriaService
     $scope.adicionar = adicionar;
     $scope.categorias = {};
 
-    categoriaService.buscarTodos().then( response => {
+    categoriaService.buscarPorUsuario().then( response => {
       $scope.categorias = response.data;
     });
 
-    gastoFixoService.buscarTodos().then( response => {
+    gastoFixoService.buscarPorUsuario().then( response => {
       $scope.gastosFixos = response.data;
     });
   }

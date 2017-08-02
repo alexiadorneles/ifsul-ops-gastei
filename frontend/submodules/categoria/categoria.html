@@ -4,17 +4,19 @@
   <div class="title">CATEGORIAS
   </div>
   <div class="categoria">
-    <div class="categoria-container" ng-repeat="categoria in categorias">
-      <span class="nome-categoria">{{categoria.nome}}</span>
-      <div class="tag-categoria" style="background-color: {{categoria.cor}};"></div>
-    </div>
+    <section ng-repeat="categoria in categorias">
+      <div class="categoria-container">
+        <span class="nome-categoria">{{categoria.nome}}</span>
+        <div class="tag-categoria" style="background-color: {{categoria.cor}};"></div>
+      </div>
+    </section>
     <div class="adicionar-categoria" ng-show="addCategoria">
       <h3>ADICIONAR CATEGORIA</h3>
       <label> Nome:
-        <input class="inputs" type="text" name="nome-categoria" required>
+        <input class="inputs" type="text" name="nome-categoria" ng-model="categoria.nome" required>
       </label>
       <label>Cor:
-        <input type="color" name="cor-categoria" required>
+        <input type="color" name="cor-categoria" ng-model="categoria.cor" required>
       </label>
     </div>
     <div class="botao-container">

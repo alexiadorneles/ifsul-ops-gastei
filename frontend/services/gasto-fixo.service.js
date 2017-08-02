@@ -17,12 +17,17 @@ export default function gastoFixoService ($http) {
     function buscarPorUsuario() {
       return $http.get(`${url}/usuario`);
     }
+    function deletar(gastoFixo) {
+      return $http.put(url, gastoFixo)
+
+    }
 
     return ({
         criar: criar,
         atualizar: atualizar,
         buscarTodos: buscarTodos,
-        buscarPorUsuario: buscarPorUsuario
+        buscarPorUsuario: buscarPorUsuario,
+        deletar: deletar
     });
 
 };

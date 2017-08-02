@@ -10,14 +10,14 @@
     </div>
     <div class="opcoes" ng-show="gastoFixo.opcoes">
       <div>Editar</div>
-      <div>Excluir</div>
+      <div ng-click="excluirGasto(gastoFixo)" >Excluir</div>
     </div>
     <div class="info">
       <div class="">
         <span class="type">Valor:</span> <span>R$ {{gastoFixo.valor}}</span>
       </div>
       <div class="">
-        <span class="type">Periodo:</span> <span>{{gastoFixo.duracaoMeses}}</span>
+        <span class="type">Periodo:</span> <span>{{gastoFixo.duracaoMeses}} meses</span>
       </div>
       <div class="info-categoria">
         <span class="type">Categoria:</span> <span class="info-categoria-nome">{{gastoFixo.categoria.nome}}</span>

@@ -4,6 +4,7 @@ import com.ifdevs.opsgastei.model.Categoria;
 import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.service.CategoriaService;
 import com.ifdevs.opsgastei.service.UsuarioService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -43,6 +44,12 @@ public class CategoriaController {
     @PutMapping
     public Categoria update(@RequestBody Categoria categoria) {
         return service.update(categoria);
+    }
+
+    @GetMapping(value = "/usuario")
+    public List<Categoria> findByUsuario(@AuthenticationPrincipal User user) {
+        Usuario usuario = usuarioService.findUsuarioByEmail(user.getUsername());
+        return service.findByUsuario(usuario);
     }
 
 }

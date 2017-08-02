@@ -1,7 +1,9 @@
 package com.ifdevs.opsgastei.service;
 
 import com.ifdevs.opsgastei.model.Objetivo;
+import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.repository.ObjetivoRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +39,10 @@ public class ObjetivoService {
 
     public Objetivo loadById(Long id) {
         return repository.findOne(id);
+    }
+
+    public List<Objetivo> findByUsuario(Usuario usuario) {
+        return repository.findByUsuario(usuario);
     }
 
 }

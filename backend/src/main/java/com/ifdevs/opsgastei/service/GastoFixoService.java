@@ -53,7 +53,7 @@ public class GastoFixoService {
 
         gastoFixo.setFimData(calendar.getTime());
         
-        return gastoFixo;
+        return repository.save(gastoFixo);
         
     }
 

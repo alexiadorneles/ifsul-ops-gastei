@@ -58,6 +58,7 @@ export default function GastoFixoController ($location, $scope, categoriaService
     },
     function(isConfirm){
       if (isConfirm) {
+        gastoFixo.fimData = new Date();
         gastoFixoService.deletar(gastoFixo).then(() => {
           buscarPorUsuario()
           swal("Excluído!", "O gasto fixo foi excluído.", "success");

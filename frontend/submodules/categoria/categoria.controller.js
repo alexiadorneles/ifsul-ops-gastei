@@ -1,13 +1,15 @@
 import swal from 'sweetalert'
-export default function CategoriaController ($location, $scope){
-  $scope.adicionarCategoria = adicionarCategoria;
-  $scope.addCategoria = false;
+export default function CategoriaController ($location, $scope, categoriaService){
+
+  init();
 
   function adicionarCategoria(){
-    if(!$scope.addCategoria){
-        $scope.addCategoria = true;
-    }else{
-        $scope.addCategoria = false;
-    }
-  }
+    $scope.addCategoria = !$scope.addCategoria;
+  };
+
+  function init() {
+    $scope.adicionarCategoria = adicionarCategoria;
+    categoriaService.buscarPorUsuario().then((response) => $scope.categorias = response.data);
+  };
+
 }

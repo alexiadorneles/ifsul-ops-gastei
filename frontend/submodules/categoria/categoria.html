@@ -4,17 +4,9 @@
   <div class="title">CATEGORIAS
   </div>
   <div class="categoria">
-    <div class="categoria-container">
-      <span class="nome-categoria">Categoria 1</span>
-      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
-    </div>
-    <div class="categoria-container">
-      <span class="nome-categoria">Categoria 2</span>
-      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
-    </div>
-    <div class="categoria-container">
-      <span class="nome-categoria">Categoria 3</span>
-      <div class="tag-categoria" style="background-color: {{categoria.color}};"></div>
+    <div class="categoria-container" ng-repeat="categoria in categorias">
+      <span class="nome-categoria">{{categoria.nome}}</span>
+      <div class="tag-categoria" style="background-color: {{categoria.cor}};"></div>
     </div>
     <div class="adicionar-categoria" ng-show="addCategoria">
       <h3>ADICIONAR CATEGORIA</h3>

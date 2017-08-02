@@ -14,10 +14,15 @@ export default function gastoFixoService ($http) {
       return $http.get(url);
     }
 
+    function buscarPorUsuario() {
+      return $http.get(`${url}/usuario`);
+    }
+
     return ({
         criar: criar,
         atualizar: atualizar,
-        buscarTodos: buscarTodos
+        buscarTodos: buscarTodos,
+        buscarPorUsuario: buscarPorUsuario
     });
 
 };

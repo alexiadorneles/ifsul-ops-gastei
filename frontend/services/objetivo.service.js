@@ -18,11 +18,16 @@ export default function objetivoService ($http) {
       return $http.delete(`${url}/${id}`)
     }
 
+    function buscarPorUsuario() {
+      return $http.get(`${url}/usuario`);
+    }
+
     return ({
         criar: criar,
         atualizar: atualizar,
         buscarTodos: buscarTodos,
-        deletar: deletar
+        deletar: deletar,
+        buscarPorUsuario: buscarPorUsuario
     });
 
 };

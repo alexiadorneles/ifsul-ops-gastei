@@ -1,7 +1,9 @@
 package com.ifdevs.opsgastei.service;
 
 import com.ifdevs.opsgastei.model.Salario;
+import com.ifdevs.opsgastei.model.Usuario;
 import com.ifdevs.opsgastei.repository.SalarioRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,10 @@ public class SalarioService {
 
     public Salario save(Salario salario) {
         return repository.save(salario);
+    }
+
+    public List<Salario> findByUsuario(Usuario usuario) {
+        return repository.findByUsuario(usuario);
     }
 
 }

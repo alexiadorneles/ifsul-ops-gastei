@@ -2,6 +2,7 @@ package com.ifdevs.opsgastei.repository;
 
 import com.ifdevs.opsgastei.model.GastoFixo;
 import com.ifdevs.opsgastei.model.Usuario;
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
@@ -11,4 +12,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface GastoFixoRepository extends CrudRepository<GastoFixo, Long> {
 
     public List<GastoFixo> findByUsuario(Usuario usuario);
+    
+    public List<GastoFixo> findByUsuarioAndFimDataBefore(Usuario usuario, Date data);
 }

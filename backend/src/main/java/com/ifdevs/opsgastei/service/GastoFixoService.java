@@ -33,6 +33,8 @@ public class GastoFixoService {
     }
 
     public GastoFixo save(GastoFixo gastoFixo) {
+        gastoFixo.setFimData(getPrimeiroDoMes(gastoFixo.getFimData()));
+        gastoFixo.setInicioData(getPrimeiroDoMes(gastoFixo.getInicioData()));
         return repository.save(gastoFixo);
     }
 
@@ -57,4 +59,17 @@ public class GastoFixoService {
         
     }
 
+    public List<GastoFixo> findByUsuarioAndFimDataBefore(Usuario usuario, Date data){
+        return repository.findByUsuarioAndFimDataBefore(usuario, data);
+    }
+    
+    /*
+      * Metodo para retornar primeiro dia do mes de certa data
+    */
+    private Date getPrimeiroDoMes(Date data){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(data);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        return calendar.getTime();
+    }
 }

@@ -6,32 +6,22 @@
       <h3>Simulação de Compra</h3>
     </div>
     <div class="objetivos">
-      <div class="selecionar-todos">
-        <span>Selecionar todos</span>
-        <input type="checkbox" value="true" ng-model="selecionarTudo">
-      </div>
-      <div class="objetivos-simulacao-container">
-        <span>Item 1</span>
-        <span>R$ 20,00</span>
-        <input ng-checked="selecionarTudo" type="checkbox">
-      </div>
-      <div class="objetivos-arquivados-container">
-        <span>Item 2</span>
-        <span>R$ 50,00</span>
-        <input ng-checked="selecionarTudo" type="checkbox">
-      </div>
-      <div class="objetivos-arquivados-container">
-        <span>Item 3</span>
-        <span>R$ 45,00</span>
-        <input ng-checked="selecionarTudo" type="checkbox">
-      </div>
-      <div class="objetivos-arquivados-container">
-        <span>Item 4</span>
-        <span>R$ 30,00</span>
-        <input ng-checked="selecionarTudo" type="checkbox">
+      <div class="objetivos-simulacao-container" ng-repeat="objetivo in objetivosIncompletos">
+        <span>{{objetivo.nome}}</span>
+        <span>R$ {{objetivo.valor}}</span>
+        <div class="info-categoria">
+          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
+          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        </div>
+        <input
+        type="checkbox"
+        ng-true-value="{{objetivo.valor}}"
+        ng-model="selecionados[objetivo.id]"
+        >
+        <!-- ng-click="selecaoAlternada(objetivo)"> -->
       </div>
       <div class="botao-container">
-        <button class="botao" ng-click="simulador()">simular</button>
+        <button class="botao" ng-click="simulador(selecionados)">simular</button>
       </div>
     </div>
   </div>

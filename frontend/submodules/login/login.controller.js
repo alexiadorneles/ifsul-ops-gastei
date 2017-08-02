@@ -20,6 +20,7 @@ export default function ($location, $scope, authFactory, usuarioService, $localS
     auth2.signIn().then(function (response) {
       if (response.Zi) {
         localStorage.setItem("picture", response.w3.Paa);
+        localStorage.setItem('nome', response.w3.ig);
         let usuario = { nome: response.w3.ig, email: response.w3.U3, senha: response.w3.Eea };
         usuarioService.criar(usuario).then((response) => {
           usuario.id = response.data.id;

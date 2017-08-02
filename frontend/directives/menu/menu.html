@@ -1,6 +1,6 @@
 <div id="sidemenu" ng-class="menuIsOpen ? 'menu-display' : 'menu-hide'">
     <article class="userinfo">
-        <img class="userinfo__picture" src="{{usuario.picture}}" alt="Picture">
+        <img class="userinfo__picture" ng-src="{{usuario.picture}}" alt="Picture">
         <h3 class="userinfo__name">{{usuario.nome}}</h3>
         <p class="userinfo__money">{{salario.valor}}</p>
     </article>

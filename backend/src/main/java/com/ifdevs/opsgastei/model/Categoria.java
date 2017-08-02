@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -21,6 +23,11 @@ public class Categoria {
 
     @NotNull
     private String cor;
+
+    @ManyToOne
+    @NotNull
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
     public Long getId() {
         return id;
@@ -45,4 +52,13 @@ public class Categoria {
     public void setCor(String cor) {
         this.cor = cor;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
 }

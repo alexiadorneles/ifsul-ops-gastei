@@ -8,35 +8,40 @@
 
 
   <!-- INCOMPLETOS -->
-  <div class="objetivo wrapper">
+  <div class="objetivo">
     <div class="title" ng-click="exibirObjetivosIncompletos()">
       OBJETIVOS INCOMPLETOS
     </div>
-
     <div class="objetivos-incompletos" ng-show="showObjetivosIncompletos">
       <div class="objetivos-incompletos-container" ng-repeat="objetivo in objetivosIncompletos">
-        <span>{{objetivo.nome}}</span>
-        <span>R$ {{objetivo.valor}}</span>
-        <div class="info-categoria">
-          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
-          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        <span>Objetivo Incompleto #{{objetivosIncompletos.indexOf(objetivo) + 1}}</span>
+        <div class="objetivo-title">
+          <h4>{{objetivo.nome}}</h4>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+              Incompleto
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-click="excluir(objetivo)"><img class="deletar" src="/assets/img/delete.svg">
+                Excluir
+              </li>
+              <li ng-click="completar(objetivo)"><img class="completar" src="/assets/img/check.svg">
+                Completar
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-            Incompleto
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li ng-click="excluir(objetivo)"><img class="deletar" src="/assets/img/delete.svg">
-              Excluir
-            </li>
-            <li ng-click="completar(objetivo)"><img class="completar" src="/assets/img/check.svg">
-              Completar
-            </li>
-          </ul>
+        <div class="info">
+          <div class="">
+            <span class="type">Valor:</span> <span>R$ {{objetivo.valor}}</span>
+          </div>
+          <div class="info-categoria">
+            <span class="type">Categoria: </span> <span class="info-categoria-nome"> {{objetivo.categoria.nome}}</span>
+            <div class="tag-categoria" style="background-color: {{objetivo.categoria.cor}};"></div>
+          </div>
         </div>
       </div>
-
       <div class="adicionar-objetivo">
         <h4 ng-click="adicionarObjetivo()">+ adicionar objetivo</h4>
       </div>
@@ -50,8 +55,6 @@
     </div>
   </div>
 
-
-
   <gasto-fixo></gasto-fixo>
 
   <!-- COMPLETOS-->
@@ -61,13 +64,20 @@
     </div>
     <div class="objetivos-completos" ng-show="showObjetivosCompletos">
       <div class="objetivos-completos-container" ng-repeat="objetivo in objetivosCompletos">
-        <span>{{objetivo.nome}}</span>
-        <span>R$ {{objetivo.valor}}</span>
-        <div class="info-categoria">
-          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
-          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        <span>Objetivo Completo #{{objetivosCompletos.indexOf(objetivo) + 1}}</span>
+        <div class="objetivo-title">
+          <h4>{{objetivo.nome}}</h4>
+          <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir(objetivo)">
         </div>
-        <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir(objetivo)">
+        <div class="info">
+          <div class="">
+            <span class="type">Valor:</span> <span>R$ {{objetivo.valor}}</span>
+          </div>
+          <div class="info-categoria">
+            <span class="type">Categoria: </span> <span class="info-categoria-nome"> {{objetivo.categoria.nome}}</span>
+            <div class="tag-categoria" style="background-color: {{objetivo.categoria.cor}};"></div>
+          </div>
+        </div>
       </div>
       <div class="objetivos-completos-total" ng-show="possuiCompletos()">
         <span>Total:</span>
@@ -75,4 +85,3 @@
       </div>
     </div>
   </div>
-</div>

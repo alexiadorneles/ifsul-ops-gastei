@@ -30,7 +30,6 @@ h3{
 
 .completos, .incompletos {
   width: 80%;
-  margin-bottom: 50px;
   border: 2px solid #9f9f9f;
   box-sizing: border-box;
   transition-duration: 1s;
@@ -46,21 +45,29 @@ h3{
 
 .objetivos-completos, .objetivos-incompletos {
   width: 80%;
-  background-color: #FFFFFF;
   border: 2px solid #9f9f9f;
-  /* box-sizing: border-box; */
   padding: 10px 0 10px 0;
   border-top: none;
-  /* border-right: none; */
-  /* border-bottom: none; */
 }
 
 .objetivos-completos-container, .objetivos-incompletos-container {
-  padding-bottom: 5px;
+  display: block;
+  padding: 20px;
+}
+
+.objetivo-title {
+  padding: 8px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  font-size: 20px;
+  justify-content: space-between;
+}
+
+.objetivos-completos > .objetivos-completos-container > .objetivo-title > h4,
+.objetivos-incompletos > .objetivos-incompletos-container > .objetivo-title > h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
 }
 
 .objetivos-completos-total {

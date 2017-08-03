@@ -1,9 +1,12 @@
+import moment from 'moment'
+
 export default function saldoService() {
     let dataSaldo = null;
 
     function set(data) {
+        moment().format('DD-MM-YYYY')
         //console.log(data);
-        dataSaldo = data;
+        dataSaldo = new Date(moment(data));
     }
     function get() {
        // console.log(data);

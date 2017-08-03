@@ -1,9 +1,9 @@
 import angular from 'angular'
 import ngRoute from 'angular-route'
 
-import './anterior.css'
-import AnteriorController from './anterior.controller'
+import './saldo.css'
+import AnteriorController from './saldo.controller'
 
-export default angular.module('app.anterior', [ngRoute])
-  .controller('AnteriorController', AnteriorController)
+export default angular.module('app.saldo', [ngRoute])
+  .controller('SaldoController', AnteriorController)
   .name;

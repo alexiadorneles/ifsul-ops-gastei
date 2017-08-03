@@ -1,6 +1,6 @@
 import swal from 'sweetalert'
 
-export default function GastoFixoController ($location, $scope, categoriaService, gastoFixoService) {
+export default function GastoFixoController ($location, $scope, categoriaService, gastoFixoService, saldoService) {
 
   init();
 
@@ -69,9 +69,16 @@ export default function GastoFixoController ($location, $scope, categoriaService
     });
   }
   function buscarPorUsuario(){
-    gastoFixoService.buscarPorUsuario().then( response => {
-      $scope.gastosFixos = response.data;
-    });
+      gastoFixoService.buscarPorUsuario().then( response => {
+          const hoje = saldoService.get() || new Date;
+
+          $scope.gastosFixos = response.data.filter( gastoFixo => {
+              const inicio = new Date(gastoFixo.inicioData);
+              const fim = new Date(gastoFixo.fimData);
+
+              return inicio < hoje && fim > hoje;
+          });
+      });
   }
 
   function init() {

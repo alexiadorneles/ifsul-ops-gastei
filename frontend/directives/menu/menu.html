@@ -7,8 +7,7 @@
     <ul class="sidemenu__list">
         <li ng-class="verificarAtivo('/objetivo') ? 'sidemenu__item--active' : ''"><a href="/objetivo">Pagina Inicial</a></li>
         <li><a href="#" ng-click="editarReceita()">Editar Receitas</a></li>
-        <li ng-class="verificarAtivo('/anterior') ? 'sidemenu__item--active' : ''"><a href="/anterior">Meses Anteriores</a></li>
-        <li ng-class="verificarAtivo('/proximo') ? 'sidemenu__item--active' : ''"><a href="/proximo">Próximos Meses</a></li>
+        <li ng-class="verificarAtivo('/consultar-saldo') ? 'sidemenu__item--active' : ''"><a ng-click="selecionarMes()" href="#">Consultar Saldo</a></li>
         <li ng-class="verificarAtivo('/gasto-fixo') ? 'sidemenu__item--active' : ''"><a href="/gasto-fixo">Gastos Fixos</a></li>
         <li ng-class="verificarAtivo('/categorias') ? 'sidemenu__item--active' : ''"><a href="/categorias">Categorias</a></li>
         <li><a ng-click="logout()" href="/sair">Sair</a></li>

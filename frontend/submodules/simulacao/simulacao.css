@@ -22,21 +22,16 @@
   font-weight: bold;
 }
 
-.simulacao-container > .objetivos{
-  margin-top: 5%;
-}
-
-.simulacao-container > .objetivos > .selecionar-todos {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10% 0 10%;
-}
-
 .objetivos-simulacao-container {
-  padding-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: block;
+  padding: 20px;
+}
+
+.objetivos-simulacao-container > .objetivo-title > h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  display: inline-block;
 }
 
 .simulacao-container > .objetivos > .botao-container > .botao {

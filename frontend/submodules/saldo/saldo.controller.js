@@ -1,5 +1,5 @@
 import swal from 'sweetalert'
-export default function AnteriorController ($location, $scope, categoriaService, objetivoService){
+export default function SaldoController ($location, $scope, categoriaService, objetivoService, saldoService){
   init();
 
   function exibirObjetivosCompletos(){
@@ -11,37 +11,26 @@ export default function AnteriorController ($location, $scope, categoriaService,
     $scope.showGastos = !$scope.showGastos;
   }
 
-
-  function excluir(objetivo){
-    swal({
-      title: "Tem certeza?",
-      text: "Desejas excluir o objetivo?",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Excluir",
-      cancelButtonText: "Cancelar",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-    function(isConfirm){
-      if (isConfirm) {
-        objetivoService.deletar(objetivo.id).then(() => {
-          buscarObjetivos()
-          swal("Excluído!", "O objetivo foi excluído.", "success");
-        })
-      } else {
-        swal("Cancelado", "Operação cancelada.", "error");
-      }
-    });
-  }
-
-
   function buscarObjetivos() {
     objetivoService.buscarPorUsuario().then( response => {
       let objetivos = response.data;
-      $scope.objetivosCompletos = objetivos.filter(objetivo => objetivo.status === 'C');
-      $scope.objetivosIncompletos = objetivos.filter(objetivo => objetivo.status === 'I');
+
+      // filtra objetivos dessa data
+      $scope.objetivosCompletos = objetivos
+          .filter(objetivo => objetivo.status === 'C')
+          .filter(objetivo => {
+              const dataObjetivo = {}, mesContexto = {};
+
+              dataObjetivo.date = new Date(objetivo.data);
+              dataObjetivo.mes = dataObjetivo.date.getMonth();
+              dataObjetivo.ano = dataObjetivo.date.getFullYear();
+
+              mesContexto.mes = saldoService.get().getMonth();
+              mesContexto.ano = saldoService.get().getFullYear();
+
+              return  mesContexto.mes === dataObjetivo.mes &&
+                      mesContexto.ano === mesContexto.ano
+          })
     });
   }
 
@@ -61,7 +50,6 @@ export default function AnteriorController ($location, $scope, categoriaService,
 
   function init() {
     $scope.exibirObjetivosCompletos = exibirObjetivosCompletos;
-    $scope.excluir = excluir;
     $scope.exibirGastos = exibirGastos;
     $scope.somarValorCompletos = somarValorCompletos;
     $scope.possuiCompletos = possuiCompletos;

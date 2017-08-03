@@ -26,6 +26,9 @@ import inicial from './submodules/inicial'
 import categoria from './submodules/categoria'
 import home from './submodules/home'
 
+// import services
+import saldoService from './services/saldo.service'
+
 
 // import directives
 import navbar from './directives/navbar'
@@ -37,6 +40,7 @@ angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_obje
   .directive('navbar', navbar)
   .directive('menu', menu)
   .directive('gastoFixo', gastoFixo)
+  .service("saldoService", saldoService)
   .config(routing)
   .constant('authConfig', {
 

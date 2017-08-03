@@ -43,7 +43,16 @@ export default function GastoFixoController ($location, $scope, categoriaService
       $scope.showAdicionar = false;
       $scope.gastoFixo = {};
     })
+
+    return swal({
+      title: "Gasto Fixo Adicionado!",
+      text: `'${$scope.gastoFixo.nome}' adicionado com sucesso.`,
+      type: "success",
+      html: true
+    });
+
   }
+
   function excluirGasto(gastoFixo){
     swal({
       title: "Tem certeza?",
@@ -81,7 +90,7 @@ export default function GastoFixoController ($location, $scope, categoriaService
     $scope.removerDropdown = removerDropdown;
     $scope.showAdicionar = false;
     $scope.adicionar = adicionar;
-    $scope.categorias = {};
+    $scope.categorias = [];
     $scope.excluirGasto = excluirGasto;
 
     categoriaService.buscarPorUsuario().then( response => {

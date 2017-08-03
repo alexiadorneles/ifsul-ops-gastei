@@ -2,7 +2,7 @@
     <article class="userinfo">
         <img class="userinfo__picture" ng-src="{{usuario.picture}}" alt="Picture">
         <h3 class="userinfo__name">{{usuario.nome}}</h3>
-        <p class="userinfo__money">R$ {{salario.valor}},00</p>
+        <p class="userinfo__money">R$ {{salarioAtual.valor}},00</p>
     </article>
     <ul class="sidemenu__list">
         <li ng-class="verificarAtivo('/objetivo') ? 'sidemenu__item--active' : ''"><a href="/objetivo">Pagina Inicial</a></li>

@@ -12,6 +12,7 @@ export default function menu (authFactory){
 
             function init() {
               $scope.salario = $localStorage.salario;
+              $scope.salarioAtual = $localStorage.salarioAtual;
                 $scope.logout = authFactory.logout;
                 $scope.usuario = {
                     nome: localStorage.getItem("nome"),

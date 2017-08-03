@@ -1,5 +1,5 @@
 import swal from 'sweetalert'
-export default function ObjetivoController ($location, $scope, categoriaService, objetivoService) {
+export default function ObjetivoController ($location, $scope, categoriaService, objetivoService, salarioService, $localStorage) {
 
   init();
 
@@ -96,7 +96,22 @@ export default function ObjetivoController ($location, $scope, categoriaService,
 
   function possuiCompletos() {
     return angular.isDefined($scope.objetivosCompletos)
-          && $scope.objetivosCompletos.length > 0;
+    && $scope.objetivosCompletos.length > 0;
+  }
+
+  function setarSalario () {
+    salarioService.buscarPorUsuario().then((res) => {
+      let salarios = res.data;
+      salarios.forEach(salario => salario.data = new Date(salario.data));
+      salarios.sort(compare);
+      $localStorage.salarioAtual = salarios.shift();
+    })
+  }
+
+  function compare(a,b) {
+    if (a.data > b.data) return -1;
+    if (a.data < b.data) return 1;
+    return 0;
   }
 
   function init() {
@@ -112,6 +127,8 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.possuiCompletos = possuiCompletos;
     $scope.showObjetivosIncompletos = true;
     $scope.categorias = [];
+    $scope.setarSalario = setarSalario;
+    setarSalario()
 
     categoriaService.buscarPorUsuario().then( response => {
       $scope.categorias = response.data;

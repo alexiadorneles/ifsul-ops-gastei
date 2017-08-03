@@ -60,7 +60,7 @@ export default function menu (authFactory){
                         if (isNaN(timestamp)===false){
                             data = new Date(data);
                             saldoService.set(data);
-                            $location.path("/gasto-fixo").replace();
+                            $location.path("/saldo").replace();
                             $scope.$apply();
 
                             swal("Pronto!", "Mostrando saldo para mes de "+saldoService.getMesNome());

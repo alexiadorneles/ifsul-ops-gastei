@@ -55,15 +55,17 @@ export default function menu (authFactory){
                         inputPlaceholder: "10/10/2017"
                     },
                     function(data){
-                        // TODO validar data
-                        if(typeof data !== "undefined"){
-                            //data = new Date(1999, 9, 10);
+                        let timestamp = Date.parse(data);
+
+                        if (isNaN(timestamp)===false){
                             data = new Date(data);
                             saldoService.set(data);
                             $location.path("/gasto-fixo").replace();
                             $scope.$apply();
 
                             swal("Pronto!", "Mostrando saldo para mes de "+saldoService.getMesNome());
+                        } else {
+                            sweetAlert("Atenção", "Data inválida!", "error");
                         }
                     }
                 );

@@ -14,8 +14,7 @@ import './directives/gasto-fixo/gasto-fixo.css'
 import routing from './app.route'
 
 // import submodules
-import anterior from './submodules/anterior'
-import proximo from './submodules/proximo'
+import saldo from './submodules/saldo'
 import objetivo from './submodules/objetivo'
 import add_objetivo from './submodules/add_objetivo'
 import simulacao from './submodules/simulacao'
@@ -35,7 +34,7 @@ import navbar from './directives/navbar'
 import menu from './directives/menu'
 import gastoFixo from './directives/gasto-fixo'
 
-angular.module('app', [ngRoute, ngstorage, anterior, proximo, objetivo, add_objetivo,
+angular.module('app', [ngRoute, ngstorage, saldo, objetivo, add_objetivo,
   simulacao, cadastro, categoria, login, gasto_fixo, inicial, home])
   .directive('navbar', navbar)
   .directive('menu', menu)

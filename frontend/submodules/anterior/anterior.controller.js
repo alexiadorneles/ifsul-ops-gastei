@@ -6,36 +6,9 @@ export default function AnteriorController ($location, $scope, categoriaService,
     $scope.showObjetivosCompletos = !$scope.showObjetivosCompletos;
   }
 
-
   function exibirGastos(){
     $scope.showGastos = !$scope.showGastos;
   }
-
-
-  function excluir(objetivo){
-    swal({
-      title: "Tem certeza?",
-      text: "Desejas excluir o objetivo?",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#DD6B55",
-      confirmButtonText: "Excluir",
-      cancelButtonText: "Cancelar",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-    function(isConfirm){
-      if (isConfirm) {
-        objetivoService.deletar(objetivo.id).then(() => {
-          buscarObjetivos()
-          swal("Excluído!", "O objetivo foi excluído.", "success");
-        })
-      } else {
-        swal("Cancelado", "Operação cancelada.", "error");
-      }
-    });
-  }
-
 
   function buscarObjetivos() {
     objetivoService.buscarPorUsuario().then( response => {
@@ -61,7 +34,6 @@ export default function AnteriorController ($location, $scope, categoriaService,
 
   function init() {
     $scope.exibirObjetivosCompletos = exibirObjetivosCompletos;
-    $scope.excluir = excluir;
     $scope.exibirGastos = exibirGastos;
     $scope.somarValorCompletos = somarValorCompletos;
     $scope.possuiCompletos = possuiCompletos;
@@ -74,5 +46,4 @@ export default function AnteriorController ($location, $scope, categoriaService,
     buscarObjetivos();
 
   }
-
 }

@@ -24,6 +24,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
       showCancelButton: true,
       confirmButtonColor: "#DD6B55",
       confirmButtonText: "Completar",
+      confirmButtonColor: "#66C4AD",
       cancelButtonText: "Cancelar",
       closeOnConfirm: false,
       closeOnCancel: false
@@ -125,6 +126,7 @@ export default function ObjetivoController ($location, $scope, categoriaService,
     $scope.somarValorCompletos = somarValorCompletos;
     $scope.possuiCompletos = possuiCompletos;
     $scope.showObjetivosIncompletos = true;
+    $scope.categorias = [];
     $scope.setarSalario = setarSalario;
     setarSalario()
 

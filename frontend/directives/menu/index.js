@@ -43,6 +43,41 @@ export default function menu (authFactory){
                     });
             }
 
+            $scope.mesAnterior = () => {
+              swal({
+                      title: "Mês Anterior",
+                      text: "Selecione a data do mês anterior: ",
+                      type: "input",
+                      inputType:	"month",
+                      showCancelButton: true,
+                      closeOnConfirm: false,
+                      animation: "slide-from-top"
+                  },
+                  function(isConfirm){
+                    if(isConfirm) {
+                     window.location.replace('/anterior');
+                    }
+                  });
+
+            }
+
+            $scope.proximoMes = () => {
+              swal({
+                      title: "Próximo Mês",
+                      text: "Selecione a data do próximo mês: ",
+                      type: "input",
+                      inputType:	"month",
+                      showCancelButton: true,
+                      closeOnConfirm: false,
+                      animation: "slide-from-top",
+                  },
+                  function(isConfirm){
+                      window.location.replace('/proximo');
+                  }
+                );
+
+            }
+
             $scope.verificarAtivo = function(urlEsperado){
               return $location.$$absUrl.endsWith(urlEsperado)
             }

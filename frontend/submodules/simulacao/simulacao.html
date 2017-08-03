@@ -7,22 +7,26 @@
     </div>
     <div class="objetivos">
       <div class="objetivos-simulacao-container" ng-repeat="objetivo in objetivosIncompletos">
-        <span>{{objetivo.nome}}</span>
-        <span>R$ {{objetivo.valor}}</span>
-        <div class="info-categoria">
-          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
-          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        <span>Objetivo Incompleto #{{objetivosIncompletos.indexOf(objetivo) + 1}}</span>
+        <div class="objetivo-title">
+          <h4>{{objetivo.nome}}</h4>
+          <input type="checkbox" ng-true-value="{{objetivo.valor}}" ng-model="selecionados[objetivo.id]">
         </div>
-        <input
-        type="checkbox"
-        ng-true-value="{{objetivo.valor}}"
-        ng-model="selecionados[objetivo.id]"
-        >
-        <!-- ng-click="selecaoAlternada(objetivo)"> -->
+        <div class="info">
+          <div class="">
+            <span class="type">Valor:</span> <span>R$ {{objetivo.valor}}</span>
+          </div>
+          <div class="info-categoria">
+            <span class="type">Categoria: </span> <span class="info-categoria-nome"> {{objetivo.categoria.nome}}</span>
+            <div class="tag-categoria" style="background-color: {{objetivo.categoria.cor}};"></div>
+          </div>
+        </div>
       </div>
+
       <div class="botao-container">
         <button class="botao" ng-click="simulador(selecionados)">simular</button>
       </div>
     </div>
   </div>
+</div>
 </div>

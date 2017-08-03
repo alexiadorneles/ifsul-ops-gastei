@@ -4,8 +4,6 @@
   <p class="valor-saldo">R$ 20,00</p>
   <h4 class="salario-atual"> Salário do mês: R$ 500,00</h4>
 </div>
-
-
 <div class="conteudo">
 
   <!-- OBJETIVO -->
@@ -15,13 +13,19 @@
     </div>
     <div class="objetivos-completos" ng-show="showObjetivosCompletos">
       <div class="objetivos-completos-container" ng-repeat="objetivo in objetivosCompletos">
-        <span>{{objetivo.nome}}</span>
-        <span>R$ {{objetivo.valor}}</span>
-        <div class="info-categoria">
-          <span class="info-categoria-nome">{{objetivo.categoria.nome}}</span>
-          <div class="tag-categoria" style="background-color: {{objetivo.categoria.color}};"></div>
+        <span>Objetivo Completo #{{objetivosCompletos.indexOf(objetivo) + 1}}</span>
+        <div class="objetivo-title">
+          <h4>{{objetivo.nome}}</h4>
         </div>
-        <img class="deletar" src="/assets/img/delete.svg" title="deletar" ng-click="excluir(objetivo)">
+        <div class="info">
+          <div class="">
+            <span class="type">Valor:</span> <span>R$ {{objetivo.valor}}</span>
+          </div>
+          <div class="info-categoria">
+            <span class="type">Categoria: </span> <span class="info-categoria-nome"> {{objetivo.categoria.nome}}</span>
+            <div class="tag-categoria" style="background-color: {{objetivo.categoria.cor}};"></div>
+          </div>
+        </div>
       </div>
       <div class="objetivos-completos-total" ng-show="possuiCompletos()">
         <span>Total:</span>
@@ -30,12 +34,6 @@
     </div>
   </div>
 
-
-
   <!-- GASTO -->
-
 <gasto-fixo> </gasto-fixo>
-
-
-
 </div>

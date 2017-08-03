@@ -3,7 +3,7 @@ export default function menu (authFactory){
     return {
         restrict: 'A',
         templateUrl: './directives/menu/menu.html',
-        controller: ($scope, $location, $localStorage, saldoService) => {
+        controller: ($scope, $location, $localStorage, $filter, saldoService) => {
             init();
 
             $scope.showMenu = () => {
@@ -58,7 +58,6 @@ export default function menu (authFactory){
                         let timestamp = Date.parse(data);
 
                         if (isNaN(timestamp)===false){
-                            data = new Date(data);
                             saldoService.set(data);
                             $location.path("/saldo").replace();
                             $scope.$apply();
